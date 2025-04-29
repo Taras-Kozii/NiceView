@@ -1,0 +1,90 @@
+@use "sass:math";
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+@mixin onLaptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin position-r {
+  position: relative;
+  inset: 0;
+}
+@mixin ibg($size: cover) {
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: $size;
+    object-position: center;
+  }
+}
+@mixin p-margin {
+  &__text p:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
+}
+@mixin flex-center($position: center) {
+  display: flex;
+  justify-content: $position;
+  align-items: center;
+}
+@mixin flex($position: center) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $position;
+}
+@mixin cards-flex($column-gap) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: $column-gap;
+}
+
+@function get-value($min-width, $max-width, $size-at-min-width, $size-at-max-width, $unit) {
+  $return-value: calc(
+    #{$size-at-min-width + $unit} + (#{$size-at-max-width - $size-at-min-width}) * ((100vw - #{$min-width + $unit}) /
+          (#{$max-width - $min-width}))
+  );
+  @return $return-value;
+}
+@function percent($min-value, $max-value) {
+  @return ($min-value * 100%) / $max-value;
+}
+@mixin adaptive-property($property, $mobile-size, $tablet-size, $desktop-size, $unit: px) {
+  $max-width: 1720;
+  $min-width: 360;
+  $tablet-width: 767.98;
+
+  @if ($unit == rem) {
+    $max-width: math.div(1720, 16);
+    $min-width: math.div(360, 16);
+    $tablet-width: math.div(767.98, 16);
+  }
+
+  @if ($tablet-size == 0) {
+    #{$property}: $desktop-size + $unit;
+
+    @media (max-width: 1720px) {
+      #{$property}: get-value($min-width, $max-width, $mobile-size, $desktop-size, $unit);
+    }
+  } @else {
+    #{$property}: get-value($min-width, $tablet-width, $mobile-size, $tablet-size, $unit);
+
+    @media (min-width: 767.98px) {
+      #{$property}: get-value($tablet-width, $max-width, $tablet-size, $desktop-size, $unit);
+    }
+    @media (min-width: 1720px) {
+      #{$property}: $desktop-size + $unit;
+    }
+  }
+}
