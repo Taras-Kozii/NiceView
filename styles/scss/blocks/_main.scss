@@ -1,4 +1,7 @@
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__section {
     @include adaptive-property(margin-bottom, 56, 100, 120);
   }
