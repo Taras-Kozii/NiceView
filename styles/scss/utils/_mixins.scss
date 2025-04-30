@@ -61,20 +61,20 @@
   @return ($min-value * 100%) / $max-value;
 }
 @mixin adaptive-property($property, $mobile-size, $tablet-size, $desktop-size, $unit: px) {
-  $max-width: 1720;
-  $min-width: 360;
+  $max-width: 1440;
+  $min-width: 390;
   $tablet-width: 767.98;
 
   @if ($unit == rem) {
-    $max-width: math.div(1720, 16);
-    $min-width: math.div(360, 16);
+    $max-width: math.div(1440, 16);
+    $min-width: math.div(390, 16);
     $tablet-width: math.div(767.98, 16);
   }
 
   @if ($tablet-size == 0) {
     #{$property}: $desktop-size + $unit;
 
-    @media (max-width: 1720px) {
+    @media (max-width: 1440px) {
       #{$property}: get-value($min-width, $max-width, $mobile-size, $desktop-size, $unit);
     }
   } @else {
@@ -83,8 +83,32 @@
     @media (min-width: 767.98px) {
       #{$property}: get-value($tablet-width, $max-width, $tablet-size, $desktop-size, $unit);
     }
-    @media (min-width: 1720px) {
+    @media (min-width: 1440px) {
       #{$property}: $desktop-size + $unit;
     }
   }
+}
+@mixin roboto {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+@mixin roboto-italic {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin nunito {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin nunito-italic {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: italic;
 }

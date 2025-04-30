@@ -1,0 +1,17 @@
+.title {
+  @include nunito;
+  @include adaptive-property(font-size, 4.25, 3, 3, rem);
+  @include adaptive-property(margin-bottom, 24, 8, 4);
+  // font-size: 68px/48pxh;
+  font-weight: 600;
+  line-height: 66px;
+  letter-spacing: -5%;
+  color: $text-color-secondary;
+}
+.subtitle {
+  @include nunito;
+  @include adaptive-property(font-size, 2.5, 2.5, 1.25, rem);
+  // font-size: 40px/40px/20px;
+  line-height: 56px;
+  color: $text-color-main;
+}

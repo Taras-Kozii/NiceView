@@ -1,0 +1,5 @@
+.main {
+  &__section {
+    @include adaptive-property(margin-bottom, 56, 100, 120);
+  }
+}

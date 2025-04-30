@@ -1,0 +1,16 @@
+<svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_1750">
+			<rect id="Iconsax/Linear/instagram" rx="0.000000" width="38.030769" height="38.030769" transform="translate(0.984615 0.984615)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Iconsax/Linear/instagram" rx="0.000000" width="38.030769" height="38.030769" transform="translate(0.984615 0.984615)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1_1750)">
+		<path id="Vector" d="M25 36.66C33.33 36.66 36.66 33.33 36.66 25L36.66 15C36.66 6.66 33.33 3.33 25 3.33L15 3.33C6.66 3.33 3.33 6.66 3.33 15L3.33 25C3.33 33.33 6.66 36.66 15 36.66L25 36.66Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.953846" stroke-linejoin="round"/>
+		<path id="Vector" d="M22.23 25.38C22.93 25.09 23.58 24.66 24.12 24.12C24.66 23.58 25.09 22.94 25.38 22.23C25.68 21.52 25.83 20.76 25.83 20C25.83 19.23 25.68 18.47 25.38 17.76C25.09 17.06 24.66 16.41 24.12 15.87C23.58 15.33 22.93 14.9 22.23 14.61C21.52 14.31 20.76 14.16 20 14.16C18.45 14.16 16.96 14.78 15.87 15.87C14.78 16.96 14.16 18.45 14.16 20C14.16 21.54 14.78 23.03 15.87 24.12C16.96 25.21 18.45 25.83 20 25.83C20.76 25.83 21.52 25.68 22.23 25.38Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.953846" stroke-linejoin="round"/>
+		<path id="Vector" d="M29.39 11.66L29.41 11.66" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="3.938462" stroke-linejoin="round" stroke-linecap="round"/>
+	</g>
+</svg>
