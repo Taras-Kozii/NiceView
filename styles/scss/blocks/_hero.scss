@@ -1,0 +1,43 @@
+.hero {
+  @include position-r;
+  width: 100%;
+  min-height: 100svh;
+  &__img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include ibg;
+    z-index: -1;
+
+    @include onDesktop {
+      width: 58%;
+    }
+  }
+
+  &__content {
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__top {
+    @include adaptive-property(padding, 16, 40, 40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-color-main;
+    border-radius: $radius-big;
+  }
+  &__title {
+    @include adaptive-property(margin-bottom, 20, 32, 32);
+    @include adaptive-property(font-size, 2.5, 0, 4.25, rem);
+    @include adaptive-property(line-height, 48, 0, 66);
+    @include nunito;
+    font-weight: 600;
+  }
+  &__text {
+    margin-bottom: 40px;
+  }
+}

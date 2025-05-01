@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nice View</title>
-    <link rel="shortcut icon" href="./images/icons/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400..500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/css/styles.min.css">
+    <link rel="preload" as="image" href="./images/hero.webp" media="(max-width: 766px">
+    <link rel="preload" as="image" href="./images/hero-big.webp" media="(min-width: 767px">
+    <link
+      rel="shortcut icon"
+      href="./images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400..500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/css/styles.min.css" />
   </head>
   <body class="page">
     <div class="wrapper">
       <header class="header">
-        <div class="header__container">
-          
-        </div>
+        <div class="header__container"></div>
       </header>
 
       <main class="main">
+        <section class="main__section hero">
+          <div class="hero__img">
+            <img
+              src="./images/hero.webp"
+              srcset="./images/hero.webp 600w, ./images/hero-big.webp 750w"
+              sizes="(max-width: 600px) 600px, 750px"
+              alt="towers"
+              decoding="async"
+              width="390"
+              height="752"
+            />
+          </div>
+          <div class="hero__container">
+            <div class="hero__content">
+              <div class="hero__top">
+                <h1 class="hero__title">ЖК “Nice view”</h1>
+                <div class="hero__text">
+                  <p>
+                    При 100% оплаті знижка 5% від банку. Пропозиція дійсна до
+                    31.12.22 р.
+                  </p>
+                </div>
+                <button class="hero__button button" data-popup="">
+                  Дзвінок
+                </button>
+              </div>
+              <div class="hero__bottom">м.Київ, просп. Вознесенський 148</div>
+            </div>
+          </div>
+        </section>
+        <section class="main__section designing">
+          <div class="designing__content">
+            <div class="designing__header section-header">
+              <h2 class="designing__title subtitle"></h2>
+              <div class="designing__line section-header__line"></div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
-          <div class="footer__container">
-            footer
-          </div>
+        <div class="footer__container">footer</div>
       </footer>
     </div>
     <script src="scripts/main.js" defer></script>
