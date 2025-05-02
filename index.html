@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nice View</title>
-    <link rel="preload" as="image" href="./images/hero.webp" media="(max-width: 766px">
-    <link rel="preload" as="image" href="./images/hero-big.webp" media="(min-width: 767px">
+    <link
+      rel="preload"
+      as="image"
+      href="./images/hero.webp"
+      media="(max-width: 766px"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./images/hero-big.webp"
+      media="(min-width: 767px"
+    />
     <link
       rel="shortcut icon"
       href="./images/icons/favicon.ico"
@@ -45,32 +55,37 @@
 
       <main class="main">
         <section class="main__section hero">
-          <div class="hero__img">
-            <img
-              src="./images/hero.webp"
-              srcset="./images/hero.webp 600w, ./images/hero-big.webp 750w"
-              sizes="(max-width: 600px) 600px, 750px"
-              alt="towers"
-              decoding="async"
-              width="390"
-              height="752"
-            />
-          </div>
-          <div class="hero__container">
-            <div class="hero__content">
-              <div class="hero__top">
-                <h1 class="hero__title">ЖК “Nice view”</h1>
-                <div class="hero__text">
-                  <p>
-                    При 100% оплаті знижка 5% від банку. Пропозиція дійсна до
-                    31.12.22 р.
-                  </p>
+          <div class="hero__body">
+            <div class="hero__img">
+              <img
+                src="./images/hero.webp"
+                srcset="./images/hero.webp 600w, ./images/hero-big.webp 750w"
+                sizes="(max-width: 37.5rem) 37.5rem, 46.875rem"
+                alt="towers"
+                decoding="async"
+                width="390"
+                height="752"
+              />
+            </div>
+            <div class="hero__container">
+              <div class="hero__content">
+                <div class="hero__top">
+                  <h1 class="hero__title">ЖК “Nice view”</h1>
+                  <div class="hero__text">
+                    <p>
+                      При 100% оплаті знижка 5% від банку.
+                    </p>
+                    <p>
+                      Пропозиція дійсна до
+                      31.12.22 р.
+                    </p>
+                  </div>
+                  <button class="hero__button button" data-popup="">
+                    Дзвінок
+                  </button>
                 </div>
-                <button class="hero__button button" data-popup="">
-                  Дзвінок
-                </button>
+                <div class="hero__bottom">м.Київ, просп. Вознесенський 148</div>
               </div>
-              <div class="hero__bottom">м.Київ, просп. Вознесенський 148</div>
             </div>
           </div>
         </section>
