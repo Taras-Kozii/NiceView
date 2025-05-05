@@ -4,7 +4,7 @@
   @include adaptive-property(margin-bottom, 24, 8, 4);
   // font-size: 68px/48pxh;
   font-weight: 600;
-  line-height: 66px;
+  @include adaptive-property(line-height, 3, 3.5, 4.125, rem);
   letter-spacing: -5%;
   color: $text-color-secondary;
 }

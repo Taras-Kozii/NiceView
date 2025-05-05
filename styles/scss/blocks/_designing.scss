@@ -1,0 +1,88 @@
+.designing {
+  &__content {
+    margin-inline: auto;
+    @include onTablet {
+      padding-inline: 60px;
+    }
+  }
+  &__top {
+    margin-inline: auto;
+    @include adaptive-property(margin-bottom, 24, 32, 24);
+  }
+  &__grid {
+    margin-inline: auto;
+  }
+}
+.grid-designing {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 32px;
+  grid-row-gap: 0px;
+
+  &__item-1 {
+    grid-area: 1 / 1 / 3 / 3;
+    translate: -32px 0;
+    @include onTablet {
+      translate: 0 0;
+    }
+  }
+  &__item-2 {
+    grid-area: 1 / 3 / 2 / 5;
+    align-self: center;
+    // margin-right: 64px;
+  }
+  &__item-3 {
+    grid-area: 2 / 3 / 3 / 5;
+    align-self: center;
+    // margin-right: 64px;
+  }
+  &__item-4 {
+    grid-area: 3 / 1 / 4 / 3;
+    // margin-left: 64px;
+    align-self: center;
+    justify-content: end;
+  }
+  &__item-5 {
+    grid-area: 4 / 1 / 5 / 3;
+    // margin-left: 64px;
+    align-self: center;
+  }
+  &__item-6 {
+    grid-area: 3 / 3 / 5 / 5;
+    translate: 32px 0;
+    @include onTablet {
+      translate: 0 0;
+    }
+  }
+  &__img {
+    @include adaptive-property(min-width, 177, 240, 450);
+    @include adaptive-property(min-height, 200, 360, 628);
+    @include ibg;
+    border-radius: $radius-small;
+    overflow: hidden;
+    box-shadow: 3.94px 3.94px 19.69px 0px rgba(0, 0, 0, 0.5);
+    @include onTablet {
+      border-radius: $radius-medium;
+    }
+  }
+  &__digits {
+    @include nunito;
+    @include adaptive-property(font-size, 2.5, 3, 4.25, rem);
+    @include adaptive-property(line-height, 3, 3.5, 4.125, rem);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  &__disc {
+    @include adaptive-property(font-size, 1.25, 2, 2.5, rem);
+    @include adaptive-property(line-height, 1.875, 2.5, 3.5, rem);
+    @include onDesktop {
+      @include nunito;
+      font-weight: 400;
+    }
+  }
+  &__text--olive .grid-designing__digits,
+  &__text--olive .grid-designing__disc {
+    color: $bg-color-secondary;
+  }
+}
