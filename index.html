@@ -8,13 +8,13 @@
       rel="preload"
       as="image"
       href="./images/hero.webp"
-      media="(max-width: 766px"
+      media="(max-width: 766px)"
     />
     <link
       rel="preload"
       as="image"
       href="./images/hero-big.webp"
-      media="(min-width: 767px"
+      media="(min-width: 767px)"
     />
     <link
       rel="shortcut icon"
@@ -44,6 +44,17 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500..800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      media="print"
+      onload="this.media='all'"
     />
     <link rel="stylesheet" href="/styles/css/styles.min.css" />
   </head>
@@ -97,8 +108,8 @@
                 <img
                   src="./images/designing/designing-1.webp"
                   srcset="
-                    ./images/designing/designing-1.webp  600w,
-                    ./images/designing/designing-1-big.webp  1200w
+                    ./images/designing/designing-1.webp      600w,
+                    ./images/designing/designing-1-big.webp 1200w
                   "
                   sizes="(max-width: 600px) 600px, 1200px"
                   alt="house"
@@ -108,9 +119,7 @@
                   loading="lazy"
                 />
               </div>
-              <div
-                class="grid-designing__item-2 grid-designing__text"
-              >
+              <div class="grid-designing__item-2 grid-designing__text">
                 <h3 class="grid-designing__digits">88</h3>
                 <h4 class="grid-designing__disc">сучасних квартир</h4>
               </div>
@@ -126,31 +135,29 @@
                 <h3 class="grid-designing__digits">300</h3>
                 <h4 class="grid-designing__disc">задоволених власників</h4>
               </div>
-              <div
-                class="grid-designing__item-5 grid-designing__text"
-              >
+              <div class="grid-designing__item-5 grid-designing__text">
                 <h3 class="grid-designing__digits">5</h3>
                 <h4 class="grid-designing__disc">успішних проектів</h4>
               </div>
               <div class="grid-designing__item-6 grid-designing__img">
                 <img
-                src="./images/designing/designing-2.webp"
-                srcset="
-                  ./images/designing/designing-2.webp  600w,
-                  ./images/designing/designing-2-big.webp  1200w
-                "
-                sizes="(max-width: 600px) 600px, 1200px"
-                alt="house"
-                decoding="async"
-                width="145"
-                height="200"
-                loading="lazy"
-              />
+                  src="./images/designing/designing-2.webp"
+                  srcset="
+                    ./images/designing/designing-2.webp      600w,
+                    ./images/designing/designing-2-big.webp 1200w
+                  "
+                  sizes="(max-width: 600px) 600px, 1200px"
+                  alt="house"
+                  decoding="async"
+                  width="145"
+                  height="200"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
         </section>
-        <section class="main__section advantage">
+        <!-- <section class="main__section advantage">
           <div class="advantage__container">
             <div class="advantage__content">
               <div class="section-header section-header--reverse">
@@ -161,6 +168,119 @@
               </div>
             </div>
           </div>
+        </section> -->
+        <section class="main__section gallery">
+          <div class="section-header gallery__top">
+            <h2 class="gallery__title section-header__subtitle subtitle">
+              Галерея
+            </h2>
+            <div class="designing__line section-header__line"></div>
+          </div>
+          <div class="gallery__container">
+            <div class="gallery__content">
+              <div class="swiper gallery__slider slider-gallery">
+                <div class="swiper-wrapper slider-gallery__body">
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide slider-gallery__slide">
+                    <img
+                      src="./images/gallery/gallery-1.webp"
+                      srcset="
+                        ./images/gallery/gallery-1.webp    600w,
+                        ./images/gallery/gallery-big.webp 1200w
+                      "
+                      sizes="(max-width: 600px) 600px, 1200px"
+                      alt="gallery-slide"
+                      decoding="async"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-pagination slider-gallery__dots"></div>
+                <div class="swiper-button-prev slider-gallery__prev"></div>
+                <div class="swiper-button-next slider-gallery__next"></div>
+              </div>
+
+              <button class="hero__button button" data-popup="">
+                Запис на перегляд
+              </button>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -168,6 +288,10 @@
         <div class="footer__container">footer</div>
       </footer>
     </div>
-    <script src="scripts/main.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="./scripts/main.js" defer></script>
   </body>
 </html>

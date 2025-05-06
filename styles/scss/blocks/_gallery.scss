@@ -1,0 +1,44 @@
+.gallery {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__top {
+    margin-bottom: 22px;
+  }
+  &__slider {
+    @include adaptive-property(margin-bottom, 16, 32, 32);
+    @include onDesktop {
+      padding-block: 50px;
+    }
+  }
+}
+.slider-gallery {
+  min-width: 0;
+  &__body {
+    @include adaptive-property(width, 200, 400, 1200);
+  }
+  &__slide {
+    flex-shrink: 0;
+    @include adaptive-property(max-width, 200, 400, 400);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: $radius-small;
+    transition: $transition-duraction-short;
+    @include onTablet {
+      border-radius: $radius-big;
+    }
+    @include onDesktop {
+      border-radius: $radius-small;
+      z-index: 1;
+    }
+    @include ibg;
+  }
+  @include onDesktop {
+    .swiper-slide-active {
+      scale: 1.25;
+      z-index: 2;
+    }
+  }
+}
