@@ -94,8 +94,15 @@
   display: flex;
   align-items: center;
   @include adaptive-property(column-gap, 16, 32, 0);
+  @include onDesktop {
+    width: 64.7%;
+  }
   &__subtitle {
     @include adaptive-property(padding-left, 16, 60, 60);
+    @include onDesktop {
+      align-self: flex-start;
+      padding-left: 0;
+    }
   }
   &__line {
     display: block;
@@ -108,6 +115,8 @@
     }
     @include onDesktop {
       height: 4px;
+      align-self: flex-end;
+      margin-right: 0;
     }
   }
 }
@@ -116,18 +125,26 @@
   .section-header__subtitle {
     @include adaptive-property(padding-right, 16, 60, 60);
     padding-left: 0;
+    @include onDesktop {
+      align-self: flex-end;
+      padding-right: 0;
+    }
   }
   .section-header__line {
     @include onTablet {
       margin-left: 60px;
       margin-right: 0;
     }
+    @include onDesktop {
+      height: 4px;
+      align-self: flex-start;
+      margin-left: 0;
+    }
   }
 }
 .section-header,
 .section-header--reverse {
   @include onDesktop {
-    width: 65%;
     flex-direction: column;
     row-gap: 6px;
   }

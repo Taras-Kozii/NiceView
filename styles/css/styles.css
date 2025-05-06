@@ -114,7 +114,7 @@ html {
     font-size: 0.875rem;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .page {
     letter-spacing: -4%;
   }
@@ -212,7 +212,7 @@ html {
     font-size: 2.5rem;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .subtitle {
     line-height: 120%; /* 48px/40 */
   }
@@ -331,6 +331,11 @@ html {
             column-gap: 0px;
   }
 }
+@media (min-width: 1200px) {
+  .section-header {
+    width: 64.7%;
+  }
+}
 .section-header__subtitle {
   padding-left: calc(16px + (44) * (100vw - 390px) / (377.98));
 }
@@ -344,6 +349,13 @@ html {
     padding-left: 60px;
   }
 }
+@media (min-width: 1200px) {
+  .section-header__subtitle {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding-left: 0;
+  }
+}
 .section-header__line {
   display: block;
   width: 100%;
@@ -351,7 +363,7 @@ html {
   background-color: #ceb181;
   border-radius: 4px;
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .section-header__line {
     margin-right: 60px;
   }
@@ -359,6 +371,9 @@ html {
 @media (min-width: 1200px) {
   .section-header__line {
     height: 4px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-right: 0;
   }
 }
 
@@ -382,17 +397,31 @@ html {
     padding-right: 60px;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
+  .section-header--reverse .section-header__subtitle {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    padding-right: 0;
+  }
+}
+@media (min-width: 767px) {
   .section-header--reverse .section-header__line {
     margin-left: 60px;
     margin-right: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .section-header--reverse .section-header__line {
+    height: 4px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: 0;
   }
 }
 
 @media (min-width: 1200px) {
   .section-header,
   .section-header--reverse {
-    width: 65%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -482,7 +511,7 @@ html {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(17.483%, rgb(251, 252, 252)), color-stop(98.438%, rgba(255, 255, 255, 0)));
   background: linear-gradient(360deg, rgb(251, 252, 252) 17.483%, rgba(255, 255, 255, 0) 98.438%);
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .hero__img::after {
     height: 30%;
   }
@@ -589,7 +618,7 @@ html {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .hero__text, .hero__bottom {
     line-height: 125%; /* 40px/32 */
   }
@@ -615,7 +644,7 @@ html {
 .designing__content {
   margin-inline: auto;
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .designing__content {
     padding-inline: 60px;
   }
@@ -634,6 +663,13 @@ html {
     margin-bottom: 24px;
   }
 }
+@media (min-width: 1200px) {
+  .designing__top {
+    margin-left: auto;
+    margin-right: 0;
+    translate: 60px 0;
+  }
+}
 .designing__grid {
   margin-inline: auto;
 }
@@ -643,48 +679,95 @@ html {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 32px;
-  grid-row-gap: 0px;
+}
+@media (min-width: 1200px) {
+  .grid-designing {
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 16px;
+  }
 }
 .grid-designing__item-1 {
   grid-area: 1/1/3/3;
   translate: -32px 0;
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .grid-designing__item-1 {
     translate: 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-designing__item-1 {
+    grid-area: 1/1/4/5;
   }
 }
 .grid-designing__item-2 {
   grid-area: 1/3/2/5;
   align-self: center;
 }
+@media (min-width: 1200px) {
+  .grid-designing__item-2 {
+    grid-area: 2/7/3/10;
+  }
+}
 .grid-designing__item-3 {
   grid-area: 2/3/3/5;
   align-self: center;
 }
+@media (min-width: 1200px) {
+  .grid-designing__item-3 {
+    grid-area: 3/7/4/10;
+  }
+}
 .grid-designing__item-4 {
   grid-area: 3/1/4/3;
   align-self: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  justify-self: end;
+}
+@media (min-width: 767px) {
+  .grid-designing__item-4 {
+    justify-self: start;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-designing__item-4 {
+    justify-self: end;
+    grid-area: 2/10/3/13;
+  }
 }
 .grid-designing__item-5 {
   grid-area: 4/1/5/3;
   align-self: center;
+  justify-self: end;
+}
+@media (min-width: 767px) {
+  .grid-designing__item-5 {
+    justify-self: start;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-designing__item-5 {
+    justify-self: end;
+    grid-area: 3/10/4/13;
+  }
 }
 .grid-designing__item-6 {
   grid-area: 3/3/5/5;
   translate: 32px 0;
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .grid-designing__item-6 {
     translate: 0 0;
   }
 }
+@media (min-width: 1200px) {
+  .grid-designing__item-6 {
+    grid-area: 2/3/5/7;
+  }
+}
 .grid-designing__img {
   min-width: calc(177px + (63) * (100vw - 390px) / (377.98));
-  min-height: calc(200px + (160) * (100vw - 390px) / (377.98));
+  aspect-ratio: 0.885/1;
   overflow: hidden;
   border-radius: 8px;
   overflow: hidden;
@@ -701,16 +784,6 @@ html {
     min-width: 450px;
   }
 }
-@media (min-width: 767.98px) {
-  .grid-designing__img {
-    min-height: calc(360px + (268) * (100vw - 767.98px) / (672.02));
-  }
-}
-@media (min-width: 1440px) {
-  .grid-designing__img {
-    min-height: 628px;
-  }
-}
 .grid-designing__img img {
   width: 100%;
   height: 100%;
@@ -719,12 +792,21 @@ html {
   -o-object-position: center;
      object-position: center;
 }
-@media (min-width: 576px) {
+@media (min-width: 767px) {
   .grid-designing__img {
     border-radius: 15.75px;
+    aspect-ratio: 0.666/1;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-designing__img {
+    aspect-ratio: 0.716/1;
   }
 }
 .grid-designing__digits {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -755,6 +837,9 @@ html {
   }
 }
 .grid-designing__disc {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   font-size: calc(1.25rem + (0.75) * (100vw - 24.375rem) / (23.62375));
   line-height: calc(1.875rem + (0.625) * (100vw - 24.375rem) / (23.62375));
 }
