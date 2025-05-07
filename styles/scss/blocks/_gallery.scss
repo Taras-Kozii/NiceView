@@ -8,24 +8,28 @@
     margin-bottom: 22px;
   }
   &__slider {
+    @include position-r;
     @include adaptive-property(margin-bottom, 16, 32, 32);
-    @include onDesktop {
-      padding-block: 50px;
-    }
   }
 }
 .slider-gallery {
   min-width: 0;
   &__body {
     @include adaptive-property(width, 200, 400, 1200);
+    margin-bottom: 24px;
+    @include onDesktop {
+      padding-block: 50px;
+      margin-bottom: 0;
+    }
   }
   &__slide {
     flex-shrink: 0;
-    @include adaptive-property(max-width, 200, 400, 400);
+    @include adaptive-property(width, 200, 400, 400);
     aspect-ratio: 1 / 1;
     cursor: pointer;
     border-radius: $radius-small;
     transition: $transition-duraction-short;
+    border-radius: 8px;
     @include onTablet {
       border-radius: $radius-big;
     }
@@ -39,6 +43,74 @@
     .swiper-slide-active {
       scale: 1.25;
       z-index: 2;
+    }
+  }
+  &__next,
+  &__prev {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    @include onDesktop {
+      border-radius: 50%;
+      background-color: $bg-color-secondary-light;
+      width: 48px;
+      height: 48px;
+    }
+    svg {
+      @include adaptive-property(width, 48, 60, 24);
+      aspect-ratio: 1 / 1;
+      object-position: center;
+      translate: -25% 0;
+      @include onDesktop {
+        path#polygon {
+          stroke: $bg-color-secondary-light;
+        }
+      }
+    }
+  }
+  &__next {
+    translate: 50% -50%;
+    @include adaptive-property(right, -36, -44, -64);
+    rotate: -180deg;
+  }
+  &__prev {
+    translate: -50% -50%;
+    @include adaptive-property(left, -36, -44, -64);
+  }
+  &__dots {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+    @include onTablet {
+      column-gap: 8px;
+    }
+    @include onDesktop {
+      display: none;
+    }
+    span {
+      flex: 0 0 auto;
+      @include adaptive-property(width, 10, 20, 20);
+      @include adaptive-property(height, 10, 20, 20);
+      border-radius: 50%;
+      background-color: #C0AFA8;
+      transition: $transition-duraction-short;
+      @include onDesktop {
+        display: none;
+      }
+    }
+    span[class*="-active"] {
+      scale: 1.2;
+      background-color: $bg-color-secondary;
     }
   }
 }

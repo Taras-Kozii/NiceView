@@ -6,10 +6,10 @@ const slider = new Swiper(".slider-gallery", {
     prevEl: ".slider-gallery__prev" 
   },
   pagination: {
-    el: '.swiper-pagination',
+    el: '.slider-gallery__dots',
     type: 'bullets',
     clickable: true,
-    dynamicBullets: true,
+    dynamicBullets: false,
 	},
 
   autoHeight: true,
