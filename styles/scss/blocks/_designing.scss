@@ -5,15 +5,6 @@
       padding-inline: 60px;
     }
   }
-  &__top {
-    margin-inline: auto;
-    @include adaptive-property(margin-bottom, 24, 32, 24);
-    @include onDesktop {
-      margin-left: auto;
-      margin-right: 0;
-      translate: 60px 0;
-    }
-  }
   &__grid {
     margin-inline: auto;
   }

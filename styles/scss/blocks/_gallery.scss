@@ -4,9 +4,6 @@
     flex-direction: column;
     align-items: center;
   }
-  &__top {
-    margin-bottom: 22px;
-  }
   &__slider {
     @include position-r;
     @include adaptive-property(margin-bottom, 16, 32, 32);
@@ -94,7 +91,7 @@
     @include onTablet {
       column-gap: 8px;
     }
-    @include onDesktop {
+    @media (min-width: 1024px) {
       display: none;
     }
     span {

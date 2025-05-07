@@ -5,14 +5,14 @@
   // font-size: 68px/48pxh;
   font-weight: 600;
   @include adaptive-property(line-height, 3, 3.5, 4.125, rem);
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
   color: $text-color-secondary;
 }
 .subtitle {
   @include nunito;
   @include adaptive-property(font-size, 1.5, 2.5, 2.5, rem);
   line-height: 150%; /* 36px/24 */
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;;
   color: $text-color-main;
   white-space: nowrap;
   @include onTablet {
@@ -38,7 +38,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 150%; /* 36px/24 */
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
 
   border-radius: 20px;
   border: 2px solid #6cafd9;
@@ -94,6 +94,8 @@
   display: flex;
   align-items: center;
   @include adaptive-property(column-gap, 16, 32, 0);
+  @include adaptive-property(margin-bottom, 24, 32, 24);
+  margin-inline: auto;
   @include onDesktop {
     width: 64.7%;
   }
@@ -128,6 +130,8 @@
     @include onDesktop {
       align-self: start;
       padding-right: 0;
+      margin-right: 0;
+      margin-left: auto;
     }
   }
   .section-header__line {
@@ -147,5 +151,19 @@
   @include onDesktop {
     flex-direction: column;
     row-gap: 6px;
+  }
+}
+.section-header--right {
+  @include onDesktop {
+    margin-left: auto;
+    margin-right: 0;
+    translate: 60px 0;
+  }
+}
+.section-header--left {
+  @include onDesktop {
+    margin-right: auto;
+    margin-left: 0;
+    translate: -60px 0;
   }
 }
