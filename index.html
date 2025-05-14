@@ -108,7 +108,7 @@
                 <img
                   src="./images/designing/designing-1.webp"
                   srcset="
-                    ./images/designing/designing-1.webp      600w,
+                    ./images/designing/designing-1.webp    600w,
                     ./images/designing/designing-1-b.webp 1200w
                   "
                   sizes="(max-width: 600px) 600px, 1200px"
@@ -143,7 +143,7 @@
                 <img
                   src="./images/designing/designing-2.webp"
                   srcset="
-                    ./images/designing/designing-2.webp      600w,
+                    ./images/designing/designing-2.webp    600w,
                     ./images/designing/designing-2-b.webp 1200w
                   "
                   sizes="(max-width: 600px) 600px, 1200px"
@@ -484,29 +484,77 @@
                 <p><strong>Вихідні:</strong> сб-нд і святкові дні</p>
                 <p><strong>Телефон менеджера:</strong> +380981194159</p>
               </div>
-              <a href="https://maps.app.goo.gl/TbfHShSDHxK9fMrT6" target="_blank" class="map__img">
-                                <img
-                    src="./images/map/map.webp.webp"
-                    srcset="
-                      ./images/map/map.webp      600w,
-                      ./images/map/map-big.webp 1200w
-                    "
-                    sizes="(max-width: 600px) 600px, 1200px"
-                    alt="map"
-                    decoding="async"
-                    width="390"
-                    height="220"
-                    loading="lazy"
-                  />
+              <a
+                href="https://maps.app.goo.gl/TbfHShSDHxK9fMrT6"
+                target="_blank"
+                class="map__img"
+              >
+                <img
+                  src="./images/map/map.webp.webp"
+                  srcset="
+                    ./images/map/map.webp      600w,
+                    ./images/map/map-big.webp 1200w
+                  "
+                  sizes="(max-width: 600px) 600px, 1200px"
+                  alt="map"
+                  decoding="async"
+                  width="390"
+                  height="220"
+                  loading="lazy"
+                />
               </a>
             </div>
 
             <a
               href="https://maps.app.goo.gl/GuXENSbcBE5eNDaS6"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               class="address__button button"
-            >На карту</a>
+              >На карту</a
+            >
+          </div>
+        </section>
+        <section class="main__section get-info">
+          <div class="section-header section-header--left section-header--reverse get-info__top">
+            <h2 class="get-info__title section-header__subtitle subtitle">
+              Отримати консультацію
+            </h2>
+            <div class="section-header__line"></div>
+          </div>
+          <div class="get-info__container">
+            <h4 class="get-info__text">
+              Поля відмічені * є обов’язковими для заповнення
+            </h4>
+                      <form action="#" method="post" class="form get-info__form">
+            <div class="form__item">
+              <label for="name">ПІБ*</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Сергій Анатолійович"
+                required
+                minlength="3"
+                class="form__text"
+              />
+            </div>
+            <div class="form__item">
+              <label for="phone">Номер телефону*</label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+38 (000) 000 00 00"
+                inputmode="tel"
+                pattern="\+38\s?\(?\d{3}\)?\s?\d{3}-\d{2}-\d{2}"
+                required
+              >
+            </div>
+              <div class="form__item">
+              <label for="time">Зручний час</label>
+              <input type="time" name="time" placeholder="00:00">
+            </div>
+            <button type="submit" class="button">Дзвінок</button>
+          </form>
           </div>
         </section>
       </main>
