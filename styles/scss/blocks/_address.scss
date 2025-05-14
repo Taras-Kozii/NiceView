@@ -35,16 +35,37 @@
     height: 100%;
     grid-area: 1 / 1 / 5 / 5;
     z-index: 1;
+    @include ibg;
     @include onDesktop {
       grid-area: 1 / 5 / 5 / 13;
     }
   }
   &__text {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(column-gap, 4, 16, 8);
+    padding-block: 4px;
+    padding-inline: 16px;
     grid-area: 1 / 1 / 3 / 3;
     z-index: 2;
+    background: #EFE8DD;
+    @include onTablet {
+      padding-block: 8px;
+      padding-inline: 32px;
+    }
     @include onDesktop {
       grid-area: 1 / 1 / 5 / 5;
       align-self: center;
+      padding-block: 0;
+      padding-inline: 0;
+      background: none;
+    }
+    color: $text-color-main;
+    letter-spacing: -0.004em;
+    @include adaptive-property(font-size, 0.875, 1.5, 1.5, rem);
+    @include adaptive-property(line-height, 20, 36, 36);
+    @include onDesktop {
+      @include roboto-italic;
     }
   }
 }

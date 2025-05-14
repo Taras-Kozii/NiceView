@@ -4,14 +4,14 @@ html {
 .page {
   @include roboto;
   @include adaptive-property(font-size, 1, 2, 0.875, rem);
-  letter-spacing: -5%;
+  letter-spacing: -0.005em;
   font-weight: 400;
   line-height: 24px;
   color: $text-color-secondary;
   background-color: $bg-color-main;
   overflow-x: clip;
   @include onTablet {
-    letter-spacing: -4%;
+    letter-spacing: -0.004em;
   }
 }
 .page.lock {
