@@ -1,9 +1,12 @@
 .footer {
+  background-color: #776D67;
+  color: #DDE5E8;
   &__content {
+    @include adaptive-property(padding-block, 40, 40, 36);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 28px;
     column-gap: 20px;
+    @include adaptive-property(row-gap, 28, 72, 0);
     @include onDesktop {
       grid-template-columns: repeat(12, 1fr);
     }
@@ -11,25 +14,461 @@
   &__main {
     grid-column: 1 / 3;
     @include onDesktop {
-      grid-column: 1 / 4;
+      grid-column: 1 / 3;
+      order: 1;
     }
   }
   &__customer {
     grid-column: 3 / -1;
+    @include onDesktop {
+      grid-column: 3 / 5;
+      order: 2;
+    }
   }
   &__contacts {
     grid-column: 1 / 3;
-    grid-row: 2;
+    @include onDesktop {
+      grid-column: 6 / 8;
+      order: 3;
+    }
   }
   &__img-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 3 / -1;
+    justify-self: start;
+    @include onDesktop {
+      grid-column: 11 / -1;
+      order: 5;
+    }
   }
-  &__img{
+  &__img {
     @include adaptive-property(width, 120, 200, 120);
     align-items: 1 / 1;
     @include ibg;
   }
   &__socials {
-     grid-column: 2 / 5;
+    grid-column: 2 / 5;
+    @include onDesktop {
+      grid-column: 9 / 10;
+      order: 4;
+    }
   }
+  &__subtitle {
+    @include adaptive-property(font-size, 1.25, 2, 1.75, rem);
+    @include adaptive-property(line-height, 30, 40, 36);
+    @include adaptive-property(margin-bottom, 12, 24, 16);
+    letter-spacing: -0.004em;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 8, 12, 12);
+  }
+  &__link,
+  &__item {
+    @include adaptive-property(font-size, 0.875, 1.5, 1, rem);
+    @include adaptive-property(line-height, 20, 36, 24);
+    color: #DDE5E8;
+  }
+  &__logo-text {
+    @include nunito;
+    @include adaptive-property(font-size, 1.5, 3, 2, rem);
+    @include adaptive-property(line-height, 36, 56, 66);
+    @include onDesktop {
+      letter-spacing: -0.008em;
+    }
+    text-align: center;
+    color: #5597C1;
+  }
+}
+
+@keyframes animate-svg-stroke-insta-1 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 154.12307739257812px;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+}
+
+@keyframes animate-svg-fill-insta-1 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .insta-1 {
+  animation: animate-svg-stroke-insta-1 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+             animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes animate-svg-stroke-insta-2 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 154.12307739257812px;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+}
+
+@keyframes animate-svg-fill-insta-2 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .insta-2 {
+  animation: animate-svg-stroke-insta-2 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+              animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes animate-svg-stroke-insta-3 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 118.82699584960938px;
+  }
+  50% {
+    stroke-dashoffset: 118.82699584960938px;
+    stroke-dasharray: 118.82699584960938px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 118.82699584960938px;
+  }
+}
+
+svg:hover .insta-3 {
+  animation: animate-svg-stroke-insta-3 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
+
+@keyframes animate-svg-stroke-insta-4 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 38.65208435058594px;
+  }
+  50% {
+    stroke-dashoffset: 38.65208435058594px;
+    stroke-dasharray: 38.65208435058594px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 38.65208435058594px;
+  }
+}
+
+svg:hover .insta-4 {
+  animation: animate-svg-stroke-insta-4 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
+}
+
+@keyframes animate-svg-stroke-insta-5 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 2.020000457763672px;
+  }
+  50% {
+    stroke-dashoffset: 2.020000457763672px;
+    stroke-dasharray: 2.020000457763672px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 2.020000457763672px;
+  }
+}
+
+svg::hover.insta-5 {
+  animation: animate-svg-stroke-insta-5 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both,
+}
+
+// ====================================
+@keyframes fb-stroke-1 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 154.12307739257812px;
+    stroke-dasharray: 154.12307739257812px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+}
+
+@keyframes fb-fill-1 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .fb-1 {
+  animation: fb-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+               fb-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes fb-stroke-2 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 154.12307739257812px;
+    stroke-dasharray: 154.12307739257812px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+}
+
+@keyframes fb-fill-2 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .fb-2 {
+  animation: fb-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+             fb-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes fb-stroke-3 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 87.56948852539062px;
+  }
+  50% {
+    stroke-dashoffset: 87.56948852539062px;
+    stroke-dasharray: 87.56948852539062px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 87.56948852539062px;
+  }
+}
+
+svg:hover .fb-3 {
+  animation: fb-stroke-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
+
+@keyframes fb-stroke-4 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 118.82698822021484px;
+  }
+  50% {
+    stroke-dashoffset: 118.82698822021484px;
+    stroke-dasharray: 118.82698822021484px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 118.82698822021484px;
+  }
+}
+
+svg:hover .fb-4 {
+  animation: fb-stroke-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
+}
+
+@keyframes youtube-stroke-1 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 142.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 142.12307739257812px;
+    stroke-dasharray: 142.12307739257812px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 142.12307739257812px;
+  }
+}
+
+@keyframes youtube-fill-1 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .youtube-1 {
+  animation: youtube-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+               youtube-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes youtube-stroke-2 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 142.12307739257812px;
+  }
+  50% {
+    stroke-dashoffset: 142.12307739257812px;
+    stroke-dasharray: 142.12307739257812px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 142.12307739257812px;
+  }
+}
+
+@keyframes youtube-fill-2 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .youtube-2 {
+  animation: youtube-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+               youtube-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes youtube-stroke-3 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 120.07964324951172px;
+  }
+  50% {
+    stroke-dashoffset: 120.07964324951172px;
+    stroke-dasharray: 120.07964324951172px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 120.07964324951172px;
+  }
+}
+
+svg:hover .youtube-3 {
+  animation: youtube-stroke-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
+
+@keyframes youtube-stroke-4 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 33.296091079711914px;
+  }
+  50% {
+    stroke-dashoffset: 33.296091079711914px;
+    stroke-dasharray: 33.296091079711914px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 33.296091079711914px;
+  }
+}
+
+svg:hover .youtube-4 {
+  animation: youtube-stroke-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
+}
+
+@keyframes teleg-stroke-1 {
+  0% {
+    stroke-dashoffset: 154.12307739257812px;
+    stroke-dasharray: 154.12307739257812px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 154.12307739257812px;
+  }
+}
+
+@keyframes teleg-fill-1 {
+  0% {
+    fill: rgb(255, 255, 255);
+  }
+  50% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+svg:hover .teleg-1 {
+  animation: teleg-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+             teleg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes teleg-stroke-2 {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 220.2796173095703px;
+  }
+  50% {
+    stroke-dashoffset: 220.2796173095703px;
+    stroke-dasharray: 220.2796173095703px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 220.2796173095703px;
+  }
+}
+
+svg:hover .teleg-2 {
+  animation: teleg-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
 }
