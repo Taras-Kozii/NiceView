@@ -14,6 +14,7 @@
     }
   }
   &__button {
+    margin-inline: auto;
     @include onDesktop{
       display: none;
     }
