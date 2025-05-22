@@ -168,14 +168,14 @@
           </div>
           <div class="advantage__container">
             <div class="advantage__content">
-              <div class="advantage__item item-advantage item-advantage--reverse">
-                <div class="item-advantage__text">
+              <div class="advantage__item item-advantage advantage-grid">
+                <div class="item-advantage__text advantage-grid__left">
                   <h3 class="item-advantage__title">10 га парку</h3>
                   <div class="item-advantage__disc">
                     Жити в центрі міста, але не на виду.
                   </div>
                 </div>
-                <div class="item-advantage__img">
+                <div class="item-advantage__img advantage-grid__right">
                   <img
                   src="./images/advantages/advantage-1.webp"
                   srcset="
@@ -191,8 +191,8 @@
                 />
                 </div>
               </div>
-              <div class="advantage__item item-advantage">
-                <div class="item-advantage__text">
+              <div class="advantage__item item-advantage advantage-grid">
+                <div class="item-advantage__text advantage-grid__right">
                   <h3 class="item-advantage__title">
                     2 школи та 2 дитсадки
                   </h3>
@@ -200,7 +200,7 @@
                     Відстань до 750 м від ЖК.
                   </div>
                 </div>
-                <div class="item-advantage__img">
+                <div class="item-advantage__img advantage-grid__left">
                   <img
                   src="./images/advantages/advantage-2.webp"
                   srcset="
@@ -216,8 +216,8 @@
                 />
                 </div>
               </div>
-              <div class="advantage__item item-advantage item-advantage--reverse">
-                <div class="item-advantage__text">
+              <div class="advantage__item item-advantage advantage-grid">
+                <div class="item-advantage__text advantage-grid__left">
                   <h3 class="item-advantage__title">
                     Безпека 24/7
                   </h3>
@@ -225,7 +225,7 @@
                     Закрита територія та відеоспостереження.
                   </div>
                 </div>
-                <div class="item-advantage__img">
+                <div class="item-advantage__img advantage-grid__right">
                   <img
                   src="./images/advantages/advantage-3.webp"
                   srcset="
@@ -241,8 +241,8 @@
                 />
                 </div>
               </div>
-              <div class="advantage__item item-advantage">
-                <div class="item-advantage__text">
+              <div class="advantage__item item-advantage advantage-grid">
+                <div class="item-advantage__text advantage-grid__right">
                   <h3 class="item-advantage__title">
                     Розумний будинок
                   </h3>
@@ -250,7 +250,7 @@
                     Індивідуальна система опалення та регулювання житла за допомогою додатку.
                   </div>
                 </div>
-                <div class="item-advantage__img">
+                <div class="item-advantage__img advantage-grid__left">
                   <img
                   src="./images/advantages/advantage-4.webp"
                   srcset="
@@ -266,8 +266,8 @@
                 />
                 </div>
               </div>
-              <div class="advantage__item item-advantage item-advantage--reverse">
-                <div class="item-advantage__text">
+              <div class="advantage__item item-advantage advantage-grid">
+                <div class="item-advantage__text advantage-grid__left">
                   <h3 class="item-advantage__title">
                     Інфраструктура.
                   </h3>
@@ -275,7 +275,7 @@
                     ІВласні керуючі компанії.
                   </div>
                 </div>
-                <div class="item-advantage__img">
+                <div class="item-advantage__img advantage-grid__right">
                   <img
                   src="./images/advantages/advantage-1.webp"
                   srcset="
@@ -647,39 +647,41 @@
             <div class="section-header__line"></div>
           </div>
           <div class="get-info__container">
-            <h4 class="get-info__text">
-              Поля відмічені * є обов’язковими для заповнення
-            </h4>
-                      <form action="#" method="post" class="form get-info__form">
-            <div class="form__item">
-              <label for="name">ПІБ*</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Сергій Анатолійович"
-                required
-                minlength="3"
-                class="form__text"
-              />
-            </div>
-            <div class="form__item">
-              <label for="phone">Номер телефону*</label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+38 (000) 000 00 00"
-                inputmode="tel"
-                pattern="\+38\s?\(?\d{3}\)?\s?\d{3}-\d{2}-\d{2}"
-                required
-              >
-            </div>
+<div class="get-info__content">
+              <h4 class="get-info__text">
+                Поля відмічені * є обов’язковими для заповнення
+              </h4>
+            <form action="#" method="post" class="form get-info__form">
               <div class="form__item">
-              <label for="time">Зручний час</label>
-              <input type="time" name="time" placeholder="00:00">
-            </div>
-            <button type="submit" class="button">Дзвінок</button>
-          </form>
+                <label for="name">ПІБ*</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Сергій Анатолійович"
+                  required
+                  minlength="3"
+                  class="form__text"
+                />
+              </div>
+              <div class="form__item">
+                <label for="phone">Номер телефону*</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+38 (000) 000 00 00"
+                  inputmode="tel"
+                  pattern="^(\+380\d{9}|0\d{9})$" 
+                  required
+                >
+              </div>
+                <div class="form__item">
+                <label for="time">Зручний час</label>
+                <input type="time" name="time" placeholder="00:00">
+              </div>
+              <button type="submit" class="button form__submit">Дзвінок</button>
+            </form>
+</div>
           </div>
         </section>
       </main>

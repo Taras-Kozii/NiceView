@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 .page {
+  min-width: 320px;
   @include roboto;
   @include adaptive-property(font-size, 1, 2, 0.875, rem);
   letter-spacing: -0.005em;

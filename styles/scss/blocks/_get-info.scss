@@ -1,0 +1,72 @@
+.get-info {
+  &__content {
+    max-width: 1077px;
+  }
+  label,
+  &__text {
+    color: $text-color-main;
+    @include adaptive-property(font-size, 1.25, 2, 1.5, rem);
+    @include adaptive-property(line-height, 1.87, 2.5, 2.25, rem);
+    letter-spacing: -4%;
+    @include onDesktop {
+      @include roboto-italic;
+    }
+  }
+  &__text {
+    margin-bottom: 1rem;
+    @include onTablet {
+      margin-bottom: 2rem;
+    }
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  @include onTablet {
+    row-gap: 24px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    @include onTablet {
+      row-gap: 12px;
+    }
+    @include onDesktop {
+      flex-direction: row;
+      column-gap: 46px;
+      justify-content: space-between;
+    }
+  }
+  input {
+    width: 100%;
+    max-width: 862px;
+    display: flex;
+    align-items: center;
+    padding-block: 0.875rem;
+    padding-inline: 1rem;
+    @include onTablet {
+      padding-block: 1rem;
+      padding-inline: 1.5rem;
+    }
+    border: 1px solid #161614;
+    border-radius: $radius-small;
+    background-color: $bg-color-main;
+  }
+  input::placeholder {
+    @include adaptive-property(font-size, 0.875, 1.5, 1.5, rem);
+    @include adaptive-property(line-height, 1.25, 2.25, 2.25, rem);
+    color: #bfbfbf;
+    letter-spacing: -4%;
+    @include onDesktop {
+      @include roboto-italic;
+    }
+  }
+  label {
+    white-space: nowrap;
+  }
+  &__submit {
+    margin-inline: auto;
+  }
+}
