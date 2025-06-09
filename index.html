@@ -65,7 +65,20 @@
           <div class="header__content">
             <div class="header__left">
               <a href="#" class="logo">
-                <img src="./images/logo/лого-small-m.webp" alt="logo">
+                <img
+                  src="./images/logo/лого-m.webp"
+                  srcset="
+                    ./images/logo/лого-m.webp    600w,
+                    ./images/logo/лого-big.webp 1200w
+                  "
+                  sizes="(max-width: 600px) 600px, 1200px"
+                  alt="logo"
+                  decoding="async"
+                  width="44"
+                  height="42"
+                  loading="lazy"
+                />
+                Nice View
               </a>
               <a 
                 href="https://maps.app.goo.gl/TbfHShSDHxK9fMrT6"

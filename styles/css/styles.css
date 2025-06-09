@@ -461,6 +461,17 @@ html {
   }
 }
 
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 80px;
+  z-index: 2;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(118, 106, 99)), color-stop(150%, rgba(198, 190, 187, 0.81)));
+  background: linear-gradient(180deg, rgb(118, 106, 99), rgba(198, 190, 187, 0.81) 150%);
+}
+
 .main__section {
   margin-bottom: calc(56px + (44) * (100vw - 390px) / (377.98));
 }
