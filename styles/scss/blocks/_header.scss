@@ -6,4 +6,37 @@
   min-height: 80px;
   z-index: 2;
   background: linear-gradient(180.00deg, rgb(118, 106, 99),rgba(198, 190, 187, 0.81) 150%);
+
+  &__content {
+    width: 100%;
+    min-height: 80px;
+    @include flex-center(space-between);
+  }
+  &__left {
+    @include flex-center(space-between);
+    @include onDesktop {
+      column-gap: 56px;
+    }
+  }
+  &__address {
+    display: none;
+    @include onDesktop {
+      display: block;
+      color: #eee8de;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      letter-spacing: -0.004em;
+    }
+  }
+  &__right {
+    @include flex-center(space-between);
+    column-gap: 136px;
+  }
+  &__lang {
+    color: #eee8de;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.004em;
+  }
 }

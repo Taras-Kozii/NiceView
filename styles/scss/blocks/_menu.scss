@@ -1,0 +1,18 @@
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    row-gap: 15px;
+  }
+  &__link  {
+    @include position-r;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.004em;
+    color: #eee8de;
+  }
+}

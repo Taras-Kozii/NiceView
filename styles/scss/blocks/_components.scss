@@ -166,3 +166,24 @@
     translate: -60px 0;
   }
 }
+// ==============================LOGO
+.logo {
+  display: flex;
+  align-items: center;
+  @include onDesktop {
+    column-gap: 10px;
+  }
+  &__img {
+    display: block;
+    @include adaptive-property(width, 42, 60, 60);
+    aspect-ratio: 1 / 1;
+    @include ibg;
+  }
+  &__title {
+    @include nunito;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.008em;
+    color: #1C4C6B;
+  }
+}

@@ -65,24 +65,27 @@
           <div class="header__content">
             <div class="header__left">
               <a href="#" class="logo">
-                <img
-                  src="./images/logo/лого-m.webp"
-                  srcset="
-                    ./images/logo/лого-m.webp    600w,
-                    ./images/logo/лого-big.webp 1200w
-                  "
-                  sizes="(max-width: 600px) 600px, 1200px"
-                  alt="logo"
-                  decoding="async"
-                  width="44"
-                  height="42"
-                  loading="lazy"
-                />
-                Nice View
+                <span class="logo__img">
+                  <img
+                    src="./images/logo/лого-m.webp"
+                    srcset="
+                      ./images/logo/лого-m.webp    600w,
+                      ./images/logo/лого-big.webp 1200w
+                    "
+                    sizes="(max-width: 600px) 600px, 1200px"
+                    alt="logo"
+                    decoding="async"
+                    width="44"
+                    height="42"
+                    loading="lazy"
+                  />
+                </span>
+                <span class="logo__title">Nice View</span>
               </a>
               <a 
                 href="https://maps.app.goo.gl/TbfHShSDHxK9fMrT6"
                 target="_blank" rel="noopener noreferrer"
+                class="header__address"
               >м.Київ, просп. Вознесенський 148</a>
             </div>
             <div class="header__right">
@@ -101,7 +104,7 @@
               </nav>
               <div class="header__buttons">
                 <div class="burger"><span></span></div>
-                <button type="button">UA</button>
+                <button type="button" class="header__lang">UA</button>
               </div>
             </div>
           </div>
