@@ -2,7 +2,17 @@
 
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
 
+
+//========================================================MENU====================================================
+burger.addEventListener('click', e => {
+  burger.classList.toggle('active');
+  menu.classList.toggle('open');
+})
+//================================================================================================================
+//========================================================SLIDER==================================================
 const slider = new Swiper(".slider-gallery", {
   navigation: {
     nextEl: ".slider-gallery__next",
@@ -36,7 +46,7 @@ const slider = new Swiper(".slider-gallery", {
     1024: { slidesPerView: 3 }
   },
 });
-
+//======================================================NAVLINK==========================================================
 const navLinks = document.querySelectorAll('[data-goto]');
 
 if (navLinks.length) {
@@ -44,27 +54,15 @@ if (navLinks.length) {
     link.addEventListener('click', e => {
       e.preventDefault();
       scrollToBlock(link);
+      console.log(burger.classList.contains('active'));
+      if (burger.classList.contains('active')) {
+        burger.classList.remove('active');
+        menu.classList.remove('open');
+      }
     });
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//================================================================================================================
 //==============================ФУНКЦІЇ================================================
 function getScrollValue(link) {
   const block = document.querySelector(link.dataset.goto);

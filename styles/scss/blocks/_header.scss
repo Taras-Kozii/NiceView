@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   min-height: 80px;
-  z-index: 2;
+  z-index: 5;
   background: linear-gradient(180.00deg, rgb(118, 106, 99),rgba(198, 190, 187, 0.81) 150%);
 
   &__content {
@@ -30,13 +30,26 @@
   }
   &__right {
     @include flex-center(space-between);
-    column-gap: 136px;
+    @include onDesktop {
+      width: 36%;
+    }
   }
   &__lang {
+    @include position-r;
     color: #eee8de;
     font-size: 28px;
     font-weight: 500;
     line-height: 36px;
     letter-spacing: -0.004em;
+  }
+  &__logo {
+    @include position-r;
+    z-index: 5;
+  }
+  &__buttons {
+    @include position-r;
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
   }
 }
