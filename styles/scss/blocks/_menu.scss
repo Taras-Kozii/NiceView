@@ -7,6 +7,8 @@
     width: 100%;
     background-color: #6cafd9;
     transition: $transition-duraction-long;
+    overflow-y: auto;
+    z-index: 5;
   }
   &__list {
     display: flex;
@@ -46,6 +48,7 @@
     @include adaptive-property(width, 32, 46, 46);
     @include adaptive-property(height, 18, 26, 26);
     cursor: pointer;
+    z-index: 5;
 
     &::before,
     &::after,

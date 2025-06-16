@@ -15,8 +15,8 @@ html {
     letter-spacing: -0.004em;
   }
 }
-.page.lock {
-  overflow: clip;
+.page:has(.burger.active) {
+  overflow: hidden;
 }
 .wrapper {
   min-height: 100%;

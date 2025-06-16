@@ -121,8 +121,8 @@ html {
   }
 }
 
-.page.lock {
-  overflow: clip;
+.page:has(.burger.active) {
+  overflow: hidden;
 }
 
 .wrapper {
@@ -521,6 +521,8 @@ html {
     background-color: #6cafd9;
     -webkit-transition: 0.8s;
     transition: 0.8s;
+    overflow-y: auto;
+    z-index: 5;
   }
 }
 .menu__list {
@@ -593,6 +595,7 @@ html {
     width: calc(32px + (14) * (100vw - 390px) / (377.98));
     height: calc(18px + (8) * (100vw - 390px) / (377.98));
     cursor: pointer;
+    z-index: 5;
   }
 }
 @media (max-width: 1200px) and (min-width: 767.98px) {
@@ -679,7 +682,7 @@ html {
   top: 0;
   width: 100%;
   min-height: 80px;
-  z-index: 5;
+  z-index: 4;
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(118, 106, 99)), color-stop(150%, rgba(198, 190, 187, 0.81)));
   background: linear-gradient(180deg, rgb(118, 106, 99), rgba(198, 190, 187, 0.81) 150%);
 }
@@ -750,6 +753,7 @@ html {
   font-weight: 500;
   line-height: 36px;
   letter-spacing: -0.004em;
+  z-index: 5;
 }
 .header__logo {
   position: relative;

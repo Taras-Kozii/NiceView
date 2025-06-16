@@ -54,7 +54,7 @@ if (navLinks.length) {
     link.addEventListener('click', e => {
       e.preventDefault();
       scrollToBlock(link);
-      console.log(burger.classList.contains('active'));
+
       if (burger.classList.contains('active')) {
         burger.classList.remove('active');
         menu.classList.remove('open');
@@ -76,6 +76,57 @@ function scrollToBlock(link) {
     top: scrollValue,
   });
 }
+//================================================================================================================
+//========================================================COUNTERS==================================================
+document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
+  function showCountsAnim() {
+    function initCounts(countsItems) {
+      const counts = countsItems 
+        ? countsItems 
+        : document.querySelectorAll('[data-counter]');
+        
+      counts.forEach(item => countAnimate(item));
+    }
 
+    function countAnimate(count) {
+      let startTimestamp = null;
 
-// console.log(navLinks);
+      const duraction = parseInt(count.dataset.counter)
+        ? parseInt(count.dataset.counter)
+        : 1000;
+      const startValue = parseInt(count.innerHTML);
+      const startPosition = 0;
+
+      const step = (timestamp) => {
+        if(!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
+        count.innerHTML = Math.floor(progress * (startPosition + startValue));
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const targetElem = entry.target;
+          const countersIntems = targetElem.querySelectorAll('[data-counter]');
+          if (countersIntems.length) {
+            initCounts(countersIntems);
+          }
+        //вимикає відслідковування після спрацювання
+        // observer.unobserve(targetElem);
+        }
+    });
+  }, options);
+
+  const countsSections = document.querySelectorAll('[data-digits]');
+  countsSections.forEach(section => observer.observe(section));
+
+}
+
+//================================================================================================================
