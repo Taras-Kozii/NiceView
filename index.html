@@ -87,8 +87,8 @@
                 class="header__address"
               >м.Київ, просп. Вознесенський 148</a>
             </div>
-            <div class="header__right">
-              <nav class="menu">
+            <div class="header__menu menu">
+              <nav class="menu__body">
                 <ul class="menu__list">
                   <li class="menu__item">
                     <a href="#" class="menu__link" data-goto=".hero">Головна</a>
@@ -103,7 +103,7 @@
               </nav>
               <div class="header__buttons">
                 <button type="button" class="header__lang">UA</button>
-                <div class="burger"><span></span></div>
+                <button class="burger"><span></span></button>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@
                 class="grid-designing__item-3 grid-designing__text grid-designing__text--olive"
                 data-digits
               >
-                <h3 class="grid-designing__digits" data-counter>40+</h3>
+                <h3 class="grid-designing__digits"><span data-counter>40</span>+</h3>
                 <h4 class="grid-designing__disc">об’єктів інфраструктури</h4>
               </div>
               <div
@@ -217,8 +217,8 @@
           <div class="advantage__container">
             <div class="advantage__content">
               <div class="advantage__item item-advantage advantage-grid">
-                <div class="item-advantage__text advantage-grid__left">
-                  <h3 class="item-advantage__title">10 га парку</h3>
+                <div class="item-advantage__text advantage-grid__left" data-digits>
+                  <h3 class="item-advantage__title"><span data-counter>10</span> га парку</h3>
                   <div class="item-advantage__disc">
                     Жити в центрі міста, але не на виду.
                   </div>
@@ -240,9 +240,9 @@
                 </div>
               </div>
               <div class="advantage__item item-advantage advantage-grid">
-                <div class="item-advantage__text advantage-grid__right">
+                <div class="item-advantage__text advantage-grid__right" data-digits>
                   <h3 class="item-advantage__title">
-                    2 школи та 2 дитсадки
+                    <span data-counter="500">2</span> школи та <span data-counter="500">2</span> дитсадки
                   </h3>
                   <div class="item-advantage__disc">
                     Відстань до 750 м від ЖК.
@@ -265,9 +265,9 @@
                 </div>
               </div>
               <div class="advantage__item item-advantage advantage-grid">
-                <div class="item-advantage__text advantage-grid__left">
+                <div class="item-advantage__text advantage-grid__left" data-digits>
                   <h3 class="item-advantage__title">
-                    Безпека 24/7
+                    Безпека <span data-counter>24</span>/<span data-counter>7</span>
                   </h3>
                   <div class="item-advantage__disc">
                     Закрита територія та відеоспостереження.

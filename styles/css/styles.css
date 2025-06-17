@@ -250,8 +250,8 @@ html {
   border-radius: 20px;
   border: 2px solid #6cafd9;
   background: #c9e4ea;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
   z-index: 1;
   overflow: hidden;
@@ -277,8 +277,8 @@ html {
   z-index: -1;
   border-radius: 50%;
   background-color: #6CAFD9;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .button:disabled {
   color: #fbfcfc;
@@ -511,18 +511,29 @@ html {
   color: #1C4C6B;
 }
 
-@media (max-width: 1200px) {
-  .menu {
+@media (max-width: 767.98px) {
+  .menu__body {
     position: fixed;
     top: 0;
     left: -100%;
     height: 100%;
     width: 100%;
+    padding: 100px 30px 30px;
     background-color: #6cafd9;
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    overflow-y: auto;
-    z-index: 5;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: auto;
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    left: -100%;
+    top: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 2;
   }
 }
 .menu__list {
@@ -536,7 +547,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px 30px 30px;
   row-gap: 2rem;
 }
 @media (min-width: 1200px) {
@@ -578,49 +588,51 @@ html {
   }
 }
 
-.menu.open {
+.menu__body.open {
   left: 0%;
+}
+.menu__body.open::before {
+  left: 0;
 }
 
 .burger {
   display: none;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767.98px) {
   .burger {
     position: relative;
     inset: 0;
     display: block;
-    width: 32px;
-    height: 18px;
-    width: calc(32px + (14) * (100vw - 390px) / (377.98));
-    height: calc(18px + (8) * (100vw - 390px) / (377.98));
+    width: calc(2rem + (0.875) * (100vw - 24.375rem) / (23.62375));
+    height: calc(1.125rem + (0.5) * (100vw - 24.375rem) / (23.62375));
     cursor: pointer;
     z-index: 5;
   }
 }
-@media (max-width: 1200px) and (min-width: 767.98px) {
+@media (max-width: 767.98px) and (min-width: 767.98px) {
   .burger {
-    width: calc(46px + (0) * (100vw - 767.98px) / (672.02));
+    width: calc(2.875rem + (0) * (100vw - 47.99875rem) / (42.00125));
   }
 }
-@media (max-width: 1200px) and (min-width: 1440px) {
+@media (max-width: 767.98px) and (min-width: 1440px) {
   .burger {
-    width: 46px;
+    width: 2.875rem;
   }
 }
-@media (max-width: 1200px) and (min-width: 767.98px) {
+@media (max-width: 767.98px) and (min-width: 767.98px) {
   .burger {
-    height: calc(26px + (0) * (100vw - 767.98px) / (672.02));
+    height: calc(1.625rem + (0) * (100vw - 47.99875rem) / (42.00125));
   }
 }
-@media (max-width: 1200px) and (min-width: 1440px) {
+@media (max-width: 767.98px) and (min-width: 1440px) {
   .burger {
-    height: 26px;
+    height: 1.625rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 767.98px) {
   .burger::before, .burger::after,
   .burger span {
+    content: "";
     display: block;
     position: absolute;
     left: 0;
@@ -628,21 +640,18 @@ html {
     height: 2px;
     border-radius: 10px;
     background-color: #324052;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     cursor: pointer;
   }
 }
-@media (max-width: 1200px) and (min-width: 767px) {
+@media (max-width: 767.98px) and (min-width: 767px) {
   .burger::before, .burger::after,
   .burger span {
     height: 4px;
   }
 }
-@media (max-width: 1200px) {
-  .burger::before, .burger::after {
-    content: "";
-  }
+@media (max-width: 767.98px) {
   .burger::before {
     top: 0;
   }
@@ -659,15 +668,15 @@ html {
 
 .burger.active::before {
   top: 50%;
-  -webkit-transform: rotate(45deg) translateY(-50%);
-      -ms-transform: rotate(45deg) translateY(-50%);
-          transform: rotate(45deg) translateY(-50%);
-}
-.burger.active::after {
-  top: 50%;
   -webkit-transform: rotate(-45deg) translateY(-50%);
       -ms-transform: rotate(-45deg) translateY(-50%);
           transform: rotate(-45deg) translateY(-50%);
+}
+.burger.active::after {
+  top: 50%;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+      -ms-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
 }
 .burger.active span {
   opacity: 0;
@@ -729,7 +738,7 @@ html {
     letter-spacing: -0.004em;
   }
 }
-.header__right {
+.header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -741,7 +750,7 @@ html {
           align-items: center;
 }
 @media (min-width: 1200px) {
-  .header__right {
+  .header__menu {
     width: 36%;
   }
 }
@@ -1495,8 +1504,8 @@ html {
   aspect-ratio: 1/1;
   cursor: pointer;
   border-radius: 8px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1648,8 +1657,8 @@ html {
   height: calc(10px + (10) * (100vw - 390px) / (377.98));
   border-radius: 50%;
   background-color: #C0AFA8;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (min-width: 767.98px) {
   .slider-gallery__dots span {
@@ -2512,8 +2521,8 @@ html {
   }
 }
 svg:hover .insta-1 {
-  -webkit-animation: animate-svg-stroke-insta-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both, animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
-          animation: animate-svg-stroke-insta-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both, animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  -webkit-animation: animate-svg-stroke-insta-1 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both, animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+          animation: animate-svg-stroke-insta-1 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both, animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-insta-2 {
@@ -2568,8 +2577,8 @@ svg:hover .insta-1 {
   }
 }
 svg:hover .insta-2 {
-  -webkit-animation: animate-svg-stroke-insta-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both, animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
-          animation: animate-svg-stroke-insta-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both, animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+  -webkit-animation: animate-svg-stroke-insta-2 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both, animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+          animation: animate-svg-stroke-insta-2 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both, animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-insta-3 {
@@ -2602,8 +2611,8 @@ svg:hover .insta-2 {
   }
 }
 svg:hover .insta-3 {
-  -webkit-animation: animate-svg-stroke-insta-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
-          animation: animate-svg-stroke-insta-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+  -webkit-animation: animate-svg-stroke-insta-3 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+          animation: animate-svg-stroke-insta-3 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-insta-4 {
@@ -2636,8 +2645,8 @@ svg:hover .insta-3 {
   }
 }
 svg:hover .insta-4 {
-  -webkit-animation: animate-svg-stroke-insta-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
-          animation: animate-svg-stroke-insta-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
+  -webkit-animation: animate-svg-stroke-insta-4 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
+          animation: animate-svg-stroke-insta-4 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-insta-5 {
@@ -2670,8 +2679,8 @@ svg:hover .insta-4 {
   }
 }
 svg::hover.insta-5 {
-  -webkit-animation: animate-svg-stroke-insta-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both;
-          animation: animate-svg-stroke-insta-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both;
+  -webkit-animation: animate-svg-stroke-insta-5 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both;
+          animation: animate-svg-stroke-insta-5 0.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both;
 }
 
 @-webkit-keyframes fb-stroke-1 {

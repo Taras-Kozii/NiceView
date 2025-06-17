@@ -27,7 +27,7 @@
       letter-spacing: -0.004em;
     }
   }
-  &__right {
+  &__menu {
     @include flex-center(space-between);
     @include onDesktop {
       width: 36%;

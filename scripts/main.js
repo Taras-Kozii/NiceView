@@ -3,7 +3,7 @@
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.menu__body');
 
 
 //========================================================MENU====================================================
@@ -75,6 +75,12 @@ function scrollToBlock(link) {
     behavior: "smooth",
     top: scrollValue,
   });
+}
+function getDigFromString(item) {
+  return parseInt(item.replace(/[^\d]/g, ''))
+}
+function getDigFormat(item, sepp = ' ') {
+  return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, `$1${sepp}`);
 }
 //================================================================================================================
 //========================================================COUNTERS==================================================
