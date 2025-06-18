@@ -8,6 +8,7 @@ const menu = document.querySelector('.menu__body');
 
 //========================================================MENU====================================================
 burger.addEventListener('click', e => {
+  lockPage();
   burger.classList.toggle('active');
   menu.classList.toggle('open');
 })
@@ -56,6 +57,7 @@ if (navLinks.length) {
       scrollToBlock(link);
 
       if (burger.classList.contains('active')) {
+        lockPage();
         burger.classList.remove('active');
         menu.classList.remove('open');
       }
@@ -82,6 +84,20 @@ function getDigFromString(item) {
 function getDigFormat(item, sepp = ' ') {
   return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, `$1${sepp}`);
 }
+function lockPage() {
+  const rightPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
+  setFixPadding(rightPaddingValue);
+  page.classList.toggle('lock');
+
+  function setFixPadding(paddingRight) {
+  const fixItems = document.querySelectorAll('.right-fix-padding');
+
+  for (const item of fixItems) {
+    item.style.paddingRight = paddingRight;
+  }
+}
+}
+
 //================================================================================================================
 //========================================================COUNTERS==================================================
 document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
