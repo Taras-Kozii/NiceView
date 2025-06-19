@@ -4,6 +4,7 @@ const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu__body');
+const openPopupButtons = document.querySelectorAll('[data-open-popup]');
 
 
 //========================================================MENU====================================================
@@ -150,5 +151,19 @@ document.querySelector('[data-counter]') ? window.addEventListener('load', showC
   countsSections.forEach(section => observer.observe(section));
 
 }
-
 //================================================================================================================
+openPopupButtons.forEach(item => {
+  item.addEventListener('click', e => {
+    document.querySelectorAll('dialog[open]').forEach(popup => popup.close());
+    const popupDataValue = e.target.dataset.openPopup;
+    const newOpenPopup = document.querySelector(`[data-popup="${popupDataValue}"]`);
+    newOpenPopup.addEventListener('click', e => {
+      const target = e.target;
+
+      if (target.closest('[data-close-popup]') || !target.closest('.popup__content')) {
+        target.closest('[data-popup]').close();
+      }
+    })
+    newOpenPopup.showModal();
+  })
+})

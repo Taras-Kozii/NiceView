@@ -3131,3 +3131,104 @@ svg:hover .teleg-2 {
   -webkit-animation: teleg-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
           animation: teleg-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
 }
+
+.popup {
+  left: 50%;
+  top: 50%;
+  translate: -50% -100px;
+  opacity: 0;
+  display: none;
+  -webkit-transition: 0.6s allow-discrete;
+  transition: 0.6s allow-discrete;
+}
+.popup__content {
+  position: relative;
+  inset: 0;
+  width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ceb181;
+}
+@media (max-width: 1440px) {
+  .popup__content {
+    width: calc(280px + (620) * (100vw - 390px) / (1050));
+  }
+}
+.popup__close {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.popup__close:before, .popup__close:after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50%;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.popup__close::after {
+  rotate: 45deg;
+}
+.popup__close:before {
+  rotate: -45deg;
+}
+
+.popup::-ms-backdrop {
+  opacity: 0;
+  -ms-transition: 0.6s allow-discrete;
+  transition: 0.6s allow-discrete;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup::backdrop {
+  opacity: 0;
+  -webkit-transition: 0.6s allow-discrete;
+  transition: 0.6s allow-discrete;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup[open] {
+  display: block;
+  opacity: 1;
+  translate: -50% -50%;
+}
+
+.popup[open]::-ms-backdrop {
+  opacity: 1;
+}
+
+.popup[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .popup[open] {
+    opacity: 0;
+    translate: -50% -100px;
+  }
+  .popup[open]::-ms-backdrop {
+    opacity: 0;
+    background-color: black;
+  }
+  .popup[open]::backdrop {
+    opacity: 0;
+    background-color: black;
+  }
+}
