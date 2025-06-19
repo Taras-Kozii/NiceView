@@ -161,9 +161,14 @@ openPopupButtons.forEach(item => {
       const target = e.target;
 
       if (target.closest('[data-close-popup]') || !target.closest('.popup__content')) {
-        target.closest('[data-popup]').close();
+
+        setTimeout(() => {
+          target.closest('[data-popup]').close();
+        }, 100)
       }
     })
-    newOpenPopup.showModal();
+    setTimeout(() => {
+          newOpenPopup.showModal();
+    }, 100)
   })
 })
