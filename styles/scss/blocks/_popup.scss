@@ -3,6 +3,7 @@
   top: 50%;
   translate: -50% -100px;
   opacity: 0;
+  @include adaptive-property(border-radius, 20, 0, 8);
 
   display: none;
   transition: $transition-duraction-long allow-discrete;
@@ -10,31 +11,55 @@
   &__content {
     @include position-r;
     @include adaptive-property(width, 280, 0, 900);
-    // @include adaptive-property(padding, 20, 0, 42);
+    @include adaptive-property(padding, 16, 0, 22);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: $bg-color-secondary-light;
+    background-color: #fff;
+  }
+  &__title {
+    @include adaptive-property(font-size, 1.25, 0, 1.5, rem);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.004em;
+    color: $text-color-secondary;
+
+    @include onDesktop {
+      @include roboto-italic;
+      display: none;
+    }
+  }
+  &__title--descktop {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
   }
   &__close {
+    width: 36px;
+    height: 36px;
     display: inline-block;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 50px;
+    top: 50px;
     cursor: pointer;
+    border: 4px solid #324052;
+    border-radius: 8px;
 
     &:before,
     &:after {
       content: "";
+      display: block;
       width: 20px;
       height: 2px;
       position: absolute;
       top: 50%;
-      left: 50%;
-      translate: -50%;
-      background-color: #fff;
+      right: 50%;
+      // transform: translate(50%, -50%);
+      transform: translateX(-50%);
+      background-color: #324052;
       border-radius: 2px;
+      z-index: 20;
     }
     &::after {
       rotate: 45deg;
@@ -50,7 +75,6 @@
   transition: $transition-duraction-long allow-discrete;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 .popup[open] {
   display: block;
   opacity: 1;
