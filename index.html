@@ -1071,17 +1071,19 @@
       </footer>
     </div>
           <dialog class="popup" data-popup="call">
+                      <button
+            type="button"
+            class="popup__close"
+            data-close-popup="call"
+          >
+          <svg width="12" height="12" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#324052" stroke-linecap="square" /><path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#324052" stroke-linecap="square" /></svg>
+          </button>
         <div class="popup__content">
           <h4 class="popup__title popup__title--descktop">
             Замовте консультацію <strong>зараз</strong> і ми перетелефонуємо
             протягом 5 хвилин.
           </h4>
           <h4 class="popup__title">Ми перетелефонуємо протягом 5 хвилин.</h4>
-          <button
-            type="button"
-            class="popup__close"
-            data-close-popup="call"
-          ></button>
           <form action="#" method="post" class="popup__form form-popup">
             <label>
               Як до Вас звертатися?
@@ -1108,7 +1110,7 @@
                 class="form-popup__item"
               />
             </label>
-            <button type="submit" class="button">Дзвінок</button>
+            <button type="submit" class="button popup__button form-popup__button">Дзвінок</button>
           </form>
         </div>
       </dialog>
