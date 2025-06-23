@@ -15,6 +15,11 @@
     @content;
   }
 }
+@mixin onMobile {
+  @media (min-width: 390px) {
+    @content;
+  }
+}
 @mixin position-r {
   position: relative;
   inset: 0;
@@ -62,12 +67,12 @@
 }
 @mixin adaptive-property($property, $mobile-size, $tablet-size, $desktop-size, $unit: px) {
   $max-width: 1440;
-  $min-width: 390;
+  $min-width: 320;
   $tablet-width: 767.98;
 
   @if ($unit == rem) {
     $max-width: math.div(1440, 16);
-    $min-width: math.div(390, 16);
+    $min-width: math.div(320, 16);
     $tablet-width: math.div(767.98, 16);
   }
 

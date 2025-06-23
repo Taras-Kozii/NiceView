@@ -61,7 +61,7 @@
       @include adaptive-property(width, 48, 60, 24);
       aspect-ratio: 1 / 1;
       object-position: center;
-      translate: -25% 0;
+      translate: -15% 0;
       @include onDesktop {
         path#polygon {
           stroke: $bg-color-secondary-light;

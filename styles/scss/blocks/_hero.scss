@@ -81,6 +81,7 @@
     @include adaptive-property(line-height, 48, 0, 66);
     @include nunito;
     font-weight: 600;
+    text-align: center;
   }
   &__text,
   &__bottom {

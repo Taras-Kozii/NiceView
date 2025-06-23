@@ -21,6 +21,7 @@
     justify-content: space-between;
   }
   &__img {
+    @include position-r;
     flex: 0 0 35%;
     @include onTablet {
       flex-basis: 38.3%;
@@ -39,6 +40,19 @@
       @include adaptive-property(border-radius, 4, 8, 8);
       @include onDesktop {
         height: 118.5%;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      background: linear-gradient(-90.00deg, rgb(221, 229, 232) 22.225%,rgba(255, 255, 255, 0) 94.166%);
+      @include adaptive-property(width, 40, 64, 64);
+      @include onDesktop {
+        display: none;
       }
     }
   }
@@ -68,11 +82,6 @@
     }
   }
 }
-// .item-advantage--reverse {
-//   @include onDesktop {
-//     flex-direction: row;
-//   }
-// }
 .advantage-grid {
   @include onDesktop {
     display: grid;
@@ -89,7 +98,7 @@
   &__right {
     @include onDesktop {
       grid-column: 7 / -1;
-      justify-self: center;
+      justify-self:auto;
     }
   }
 }

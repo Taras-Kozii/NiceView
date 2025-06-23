@@ -1,5 +1,6 @@
 .designing {
   &__content {
+    max-width: 1560px;
     margin-inline: auto;
     @include onTablet {
       padding-inline: 60px;
@@ -13,7 +14,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 32px;
+  grid-column-gap: 16px;
+
+  @include onMobile {
+    grid-column-gap: 32px;
+  }
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
@@ -80,7 +85,8 @@
     }
   }
   &__img {
-    @include adaptive-property(min-width, 177, 240, 450);
+    @include position-r;
+    @include adaptive-property(min-width, 150, 240, 450);
     aspect-ratio: 0.885 / 1;
     @include ibg;
     border-radius: $radius-small;

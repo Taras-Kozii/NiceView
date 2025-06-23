@@ -1,5 +1,4 @@
 .popup {
-  position: relative;
   left: 50vw;
   top: 50vh;
   translate: -50% -100px;
@@ -11,7 +10,7 @@
   transition: $transition-duraction-long allow-discrete;
 
   &__content {
-    @include adaptive-property(width, 320, 0, 900);
+    @include adaptive-property(width, 280, 0, 900);
     @include adaptive-property(padding, 16, 0, 22);
     @include adaptive-property(margin-top, 52, 0, 64);
     display: flex;

@@ -23,7 +23,7 @@
 }
 //=================================BUTTON=============================
 .button {
-  @include adaptive-property(width, 320, 400, 480);
+  width: min(100%, 480px);
   position: relative;
   left: 0;
   right: 0;
@@ -175,11 +175,15 @@
   }
   &__img {
     display: block;
-    @include adaptive-property(width, 42, 60, 60);
+    @include adaptive-property(width, 42, 0, 60);
     aspect-ratio: 1 / 1;
     @include ibg;
   }
   &__title {
+    display: none;
+    @media (min-width: 390px) {
+      display: inline-block;
+    }
     @include nunito;
     font-size: 32px;
     line-height: 40px;
