@@ -188,6 +188,32 @@
     font-size: 32px;
     line-height: 40px;
     letter-spacing: -0.008em;
-    color: #1C4C6B;
+    color: #254255;
+  }
+}
+// ====================================HOVER-LINK======================================
+.hover-underline {
+  span {
+    @include position-r;
+    transition: $transition-duraction-short;
+  }
+  span::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #254255;
+    content: '';
+    opacity: 0;
+    transition: $transition-duraction-short;
+    transform: translateY(10px);
+  }
+  span:hover::before {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  span:hover {
+    color: #254255;
   }
 }

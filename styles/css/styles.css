@@ -494,12 +494,43 @@ html {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: -0.008em;
-  color: #1C4C6B;
+  color: #254255;
 }
 @media (min-width: 390px) {
   .logo__title {
     display: inline-block;
   }
+}
+
+.hover-underline span {
+  position: relative;
+  inset: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.hover-underline span::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #254255;
+  content: "";
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+}
+.hover-underline span:hover::before {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+}
+.hover-underline span:hover {
+  color: #254255;
 }
 
 @media (max-width: 1024px) {
@@ -799,7 +830,6 @@ html {
 .hero {
   position: relative;
   inset: 0;
-  z-index: 1;
   width: 100%;
   min-height: 100svh;
 }
@@ -825,8 +855,7 @@ html {
 }
 @media (min-width: 1200px) {
   .hero__body {
-    -webkit-clip-path: polygon(99% 0%, 36% 11%, 6% 27%, 0% 35%, 0% 99%, 62% 87%, 92% 71%, 99% 64%);
-            clip-path: polygon(99% 0%, 36% 11%, 6% 27%, 0% 35%, 0% 99%, 62% 87%, 92% 71%, 99% 64%);
+    border-radius: 100% 0% 100% 0%/53% 60% 40% 47%;
     background-color: #fbfcfc;
     overflow: hidden;
   }
@@ -838,7 +867,7 @@ html {
   right: 0;
   top: 0;
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 .hero__img img {
   width: 100%;
@@ -908,6 +937,7 @@ html {
           align-items: center;
   background-color: #fbfcfc;
   border-radius: 20px;
+  z-index: 2;
 }
 @media (min-width: 767.98px) {
   .hero__top {

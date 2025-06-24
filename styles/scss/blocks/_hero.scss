@@ -1,7 +1,6 @@
 .hero {
   @include position-r;
   @include p-margin;
-  z-index: 1;
   width: 100%;
   min-height: 100svh;
   @include onDesktop {
@@ -20,7 +19,7 @@
   &__body {
     @include position-r;
     @include onDesktop {
-      clip-path: polygon(99% 0%, 36% 11%, 6% 27%, 0% 35%, 0% 99%, 62% 87%, 92% 71%, 99% 64%);
+      border-radius: 100% 0% 100% 0% / 53% 60% 40% 47%;
       background-color: $bg-color-main;
       overflow: hidden;
     }
@@ -32,7 +31,7 @@
     right: 0;
     top: 0;
     @include ibg;
-    z-index: -1;
+    z-index: 1;
     @include onDesktop {
       width: 58%;
     }
@@ -70,6 +69,7 @@
     align-items: center;
     background-color: $bg-color-main;
     border-radius: $radius-big;
+    z-index: 2;
     @include onDesktop {
       align-self: flex-start;
 
