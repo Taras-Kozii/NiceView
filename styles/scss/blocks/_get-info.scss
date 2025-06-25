@@ -58,7 +58,7 @@
     @include adaptive-property(font-size, 0.875, 1.5, 1.5, rem);
     @include adaptive-property(line-height, 1.25, 2.25, 2.25, rem);
     color: #bfbfbf;
-    letter-spacing: -4%;
+    letter-spacing: -0.004em;
     @include onDesktop {
       @include roboto-italic;
     }

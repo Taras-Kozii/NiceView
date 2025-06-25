@@ -50,9 +50,27 @@
     border: 4px solid #324052;
     border-radius: 8px;
 
-    svg path {
-      stroke: #324052;
+    span {
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 2px);
+        left: calc(50% - 6px);
+        width: 12px;
+        height: 2px;
+        border-radius: 4px;
+        background-color: #324052;
+      }
+      &:before {
+        rotate: -45deg;
+      }
+      &:after {
+        rotate: 45deg;
+      }
     }
+
   }
 }
 .popup::backdrop {
@@ -76,7 +94,7 @@
   }
   .popup[open]::backdrop {
     opacity: 0;
-    background-color: rgba($color: #000000, $alpha: 1.0)
+    background-color: rgba($color: #000000, $alpha: 1);
   }
 }
 
@@ -108,7 +126,7 @@
   input {
     width: min(100%, 320px);
     padding: 12px;
-    background-color: #F2EFEA;
+    background-color: #f2efea;
     border: 1px solid #8d6515;
     border-radius: 12px;
     color: #8d6515;
@@ -119,11 +137,11 @@
   }
   input::placeholder {
     @include adaptive-property(font-size, 0.875, 0, 1.5, rem);
-    line-height:1.5;
+    line-height: 1.5;
     letter-spacing: -0.004em;
     color: #bfbfbf;
     @include onDesktop {
       @include roboto-italic;
     }
-}
+  }
 }

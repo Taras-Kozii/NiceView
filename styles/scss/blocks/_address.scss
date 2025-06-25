@@ -14,7 +14,12 @@
     }
   }
   &__button {
-    margin-inline: auto;
+    @include adaptive-property(margin-inline, 16, 60, 60);
+    width: stretch;
+    max-width: 480px;
+    @media (min-width: 540px) {
+      margin-inline: auto;
+    }
     @include onDesktop{
       display: none;
     }
@@ -47,7 +52,7 @@
     @include adaptive-property(column-gap, 4, 16, 8);
     padding-block: 4px;
     padding-inline: 16px;
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: 1 / 1 / 2 / 3;
     z-index: 2;
     background: #EFE8DD;
     @include onTablet {

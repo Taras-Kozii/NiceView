@@ -39,6 +39,13 @@ const slider = new Swiper(".slider-gallery", {
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
+  loop: true,
+  autoplay: {
+    delay: 2000,
+    stopOnLastSlide: false,
+		disableOnInteraction: true,
+	},
+
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -172,3 +179,15 @@ openPopupButtons.forEach(item => {
     }, 100)
   })
 })
+//===================================================FORM=============================================================
+document.querySelectorAll('form').forEach(elem => {
+  elem.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (elem.closest('[data-popup]')) {
+      elem.closest('[data-popup]').close();
+      elem.reset();
+    }
+    elem.reset();
+  })
+});
