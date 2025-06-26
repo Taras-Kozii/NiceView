@@ -105,7 +105,24 @@ function lockPage() {
   }
 }
 }
+function isInView(elem, persent=0.3) {
+  const rect = elem.getBoundingClientRect();
+  const visiblePart = elem.offsetHeight * persent;
+    
+  return rect.bottom > 0 && rect.top < (
+    window.innerHeight - visiblePart || document.documentElement.clientHeight - visiblePart);
+}
+function toggleAnimItems(selector='.scroll-anim', visiblePercent=0.3) {
+  const animItems = document.querySelectorAll(selector);
 
+  animItems.forEach(item => {
+    if (isInView(item, visiblePercent)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  })
+}
 //================================================================================================================
 //========================================================COUNTERS==================================================
 document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
@@ -190,4 +207,12 @@ document.querySelectorAll('form').forEach(elem => {
     }
     elem.reset();
   })
+});
+//===================================================ANIM=============================================================
+window.addEventListener('scroll', (e) => {
+  toggleAnimItems('.hero .scroll-anim', 0.2);
+});
+window.addEventListener('load', (e) => {
+  toggleAnimItems('.hero .scroll-anim', 0.2);
+  toggleAnimItems('.gallery .scroll-anim', 0.3);
 });

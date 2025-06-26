@@ -106,3 +106,13 @@
     }
   }
 }
+.hero .scroll-anim {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: transform $transition-duraction-short, opacity $transition-duraction-long;
+  transition-delay: calc(($transition-duraction-long / var(--quantity)) * (var(--pos) - 1));
+}
+.hero .scroll-anim.active {
+  opacity: 1;
+  transform: translateY(0px);
+}

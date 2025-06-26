@@ -1024,6 +1024,26 @@ html {
   }
 }
 
+.hero .scroll-anim {
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+      -ms-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: opacity 0.6s, -webkit-transform 0.3s;
+  transition: opacity 0.6s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.6s;
+  transition: transform 0.3s, opacity 0.6s, -webkit-transform 0.3s;
+  -webkit-transition-delay: calc(0.6s / var(--quantity) * (var(--pos) - 1));
+          transition-delay: calc(0.6s / var(--quantity) * (var(--pos) - 1));
+}
+
+.hero .scroll-anim.active {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
 .designing__content {
   max-width: 1560px;
   margin-inline: auto;
