@@ -125,6 +125,129 @@ function toggleAnimItems(selector='.scroll-anim', visiblePercent=0.3) {
 }
 //================================================================================================================
 //========================================================COUNTERS==================================================
+// document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
+//   function showCountsAnim() {
+//     function initCounts(countsItems) {
+//       const counts = countsItems 
+//         ? countsItems 
+//         : document.querySelectorAll('[data-counter]');
+        
+//       counts.forEach(item => countAnimate(item));
+//     }
+
+//     function countAnimate(count) {
+//       let startTimestamp = null;
+
+//       const duraction = parseInt(count.dataset.counter)
+//         ? parseInt(count.dataset.counter)
+//         : 1000;
+//       const startValue = parseInt(count.innerHTML);
+//       const startPosition = 0;
+
+//       const step = (timestamp) => {
+//         if(!startTimestamp) startTimestamp = timestamp;
+//         const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
+//         count.innerHTML = Math.floor(progress * (startPosition + startValue));
+
+//         if (progress < 1) {
+//           window.requestAnimationFrame(step);
+//         }
+//       };
+//       window.requestAnimationFrame(step);
+//     }
+
+//     const options = { threshold: 0.1 };
+//     const observer = new IntersectionObserver((entries, observer) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           const targetElem = entry.target;
+//           const countersIntems = targetElem.querySelectorAll('[data-counter]');
+//           if (countersIntems.length) {
+//             initCounts(countersIntems);
+//           }
+//         //вимикає відслідковування після спрацювання
+//         // observer.unobserve(targetElem);
+//         }
+//     });
+//   }, options);
+
+//   const countsSections = document.querySelectorAll('[data-digits]');
+//   countsSections.forEach(section => observer.observe(section));
+
+// }
+//================================================================================================================
+openPopupButtons.forEach(item => {
+  item.addEventListener('click', e => {
+    document.querySelectorAll('dialog[open]').forEach(popup => popup.close());
+    const popupDataValue = e.target.dataset.openPopup;
+    const newOpenPopup = document.querySelector(`[data-popup="${popupDataValue}"]`);
+    newOpenPopup.addEventListener('click', e => {
+      const target = e.target;
+
+      if (target.closest('[data-close-popup]') || !target.closest('.popup__content')) {
+
+        setTimeout(() => {
+          target.closest('[data-popup]').close();
+        }, 100)
+      }
+    })
+    setTimeout(() => {
+          newOpenPopup.showModal();
+    }, 100)
+  })
+})
+//===================================================FORM=============================================================
+document.querySelectorAll('form').forEach(elem => {
+  elem.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (elem.closest('[data-popup]')) {
+      elem.closest('[data-popup]').close();
+      elem.reset();
+    }
+    elem.reset();
+  })
+});
+//===================================================ANIM=============================================================
+// window.addEventListener('scroll', (e) => {
+//   toggleAnimItems('.hero .scroll-anim', 0.2);
+// });
+// window.addEventListener('load', (e) => {
+//   toggleAnimItems('.hero .scroll-anim', 0.2);
+//   toggleAnimItems('.gallery .scroll-anim', 0.3);
+// });
+
+function watcherAnim(selector = '.scroll-anim', percent = 0.1, callback = (el) => {}, once = false) {
+  const animItems = document.querySelectorAll(selector);
+
+  const observer = new IntersectionObserver((entries, observerInstance) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        callback(entry.target);
+        if (once) {
+          observerInstance.unobserve(entry.target);
+        }
+      } else {
+        callback(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: percent,
+  });
+
+  animItems.forEach(el => {
+    if (el instanceof Element) {
+      observer.observe(el);
+    }
+  });
+}
+
+watcherAnim(
+  '.hero .scroll-anim',
+  0.3,
+  (el) => el.classList.toggle('active'),
+);
 document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
   function showCountsAnim() {
     function initCounts(countsItems) {
@@ -175,44 +298,3 @@ document.querySelector('[data-counter]') ? window.addEventListener('load', showC
   countsSections.forEach(section => observer.observe(section));
 
 }
-//================================================================================================================
-openPopupButtons.forEach(item => {
-  item.addEventListener('click', e => {
-    document.querySelectorAll('dialog[open]').forEach(popup => popup.close());
-    const popupDataValue = e.target.dataset.openPopup;
-    const newOpenPopup = document.querySelector(`[data-popup="${popupDataValue}"]`);
-    newOpenPopup.addEventListener('click', e => {
-      const target = e.target;
-
-      if (target.closest('[data-close-popup]') || !target.closest('.popup__content')) {
-
-        setTimeout(() => {
-          target.closest('[data-popup]').close();
-        }, 100)
-      }
-    })
-    setTimeout(() => {
-          newOpenPopup.showModal();
-    }, 100)
-  })
-})
-//===================================================FORM=============================================================
-document.querySelectorAll('form').forEach(elem => {
-  elem.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (elem.closest('[data-popup]')) {
-      elem.closest('[data-popup]').close();
-      elem.reset();
-    }
-    elem.reset();
-  })
-});
-//===================================================ANIM=============================================================
-window.addEventListener('scroll', (e) => {
-  toggleAnimItems('.hero .scroll-anim', 0.2);
-});
-window.addEventListener('load', (e) => {
-  toggleAnimItems('.hero .scroll-anim', 0.2);
-  toggleAnimItems('.gallery .scroll-anim', 0.3);
-});
