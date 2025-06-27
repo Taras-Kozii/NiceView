@@ -6,7 +6,6 @@ const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu__body');
 const openPopupButtons = document.querySelectorAll('[data-open-popup]');
 
-
 //========================================================MENU====================================================
 burger.addEventListener('click', e => {
   lockPage();
@@ -105,77 +104,76 @@ function lockPage() {
   }
 }
 }
-function isInView(elem, persent=0.3) {
-  const rect = elem.getBoundingClientRect();
-  const visiblePart = elem.offsetHeight * persent;
-    
-  return rect.bottom > 0 && rect.top < (
-    window.innerHeight - visiblePart || document.documentElement.clientHeight - visiblePart);
-}
-function toggleAnimItems(selector='.scroll-anim', visiblePercent=0.3) {
+function watcherAnim(selector = '.scroll-anim', percent = 0.1, callback = (el) => {}, once = false) {
   const animItems = document.querySelectorAll(selector);
 
-  animItems.forEach(item => {
-    if (isInView(item, visiblePercent)) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
+  const observer = new IntersectionObserver((entries, observerInstance) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        callback(entry.target);
+        if (once) {
+          observerInstance.unobserve(entry.target);
+        }
+      }
+    });
+  }, {
+    root: null,
+    threshold: percent,
+  });
+
+  animItems.forEach(el => {
+    if (el instanceof Element) {
+      observer.observe(el);
     }
-  })
+  });
+}
+function watcherToggle(selector = '.scroll-anim', percent = 0.1) {
+  const animItems = document.querySelectorAll(selector);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, {
+    root: null,
+    threshold: percent,
+  });
+
+  animItems.forEach(el => {
+    if (el instanceof Element) {
+      observer.observe(el);
+    }
+  });
+}
+function countAnimate(count) {
+      let startTimestamp = null;
+
+      const duraction = parseFloat(count.dataset.counter)
+        ? parseInt(count.dataset.counter)
+        : 1000;
+      const startValue = parseFloat(count.innerHTML);
+      const startPosition = 0;
+
+      const step = (timestamp) => {
+        if(!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
+        count.innerHTML = Math.floor(progress * (startPosition + startValue));
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+}
+function setCSSProperty(item, property, value) {
+  item.style.setProperty(property, value);
 }
 //================================================================================================================
-//========================================================COUNTERS==================================================
-// document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
-//   function showCountsAnim() {
-//     function initCounts(countsItems) {
-//       const counts = countsItems 
-//         ? countsItems 
-//         : document.querySelectorAll('[data-counter]');
-        
-//       counts.forEach(item => countAnimate(item));
-//     }
-
-//     function countAnimate(count) {
-//       let startTimestamp = null;
-
-//       const duraction = parseInt(count.dataset.counter)
-//         ? parseInt(count.dataset.counter)
-//         : 1000;
-//       const startValue = parseInt(count.innerHTML);
-//       const startPosition = 0;
-
-//       const step = (timestamp) => {
-//         if(!startTimestamp) startTimestamp = timestamp;
-//         const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
-//         count.innerHTML = Math.floor(progress * (startPosition + startValue));
-
-//         if (progress < 1) {
-//           window.requestAnimationFrame(step);
-//         }
-//       };
-//       window.requestAnimationFrame(step);
-//     }
-
-//     const options = { threshold: 0.1 };
-//     const observer = new IntersectionObserver((entries, observer) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           const targetElem = entry.target;
-//           const countersIntems = targetElem.querySelectorAll('[data-counter]');
-//           if (countersIntems.length) {
-//             initCounts(countersIntems);
-//           }
-//         //вимикає відслідковування після спрацювання
-//         // observer.unobserve(targetElem);
-//         }
-//     });
-//   }, options);
-
-//   const countsSections = document.querySelectorAll('[data-digits]');
-//   countsSections.forEach(section => observer.observe(section));
-
-// }
-//================================================================================================================
+//========================================================POPUPS================================================
 openPopupButtons.forEach(item => {
   item.addEventListener('click', e => {
     document.querySelectorAll('dialog[open]').forEach(popup => popup.close());
@@ -196,6 +194,7 @@ openPopupButtons.forEach(item => {
     }, 100)
   })
 })
+//================================================================================================================
 //===================================================FORM=============================================================
 document.querySelectorAll('form').forEach(elem => {
   elem.addEventListener('submit', (e) => {
@@ -209,92 +208,7 @@ document.querySelectorAll('form').forEach(elem => {
   })
 });
 //===================================================ANIM=============================================================
-// window.addEventListener('scroll', (e) => {
-//   toggleAnimItems('.hero .scroll-anim', 0.2);
-// });
-// window.addEventListener('load', (e) => {
-//   toggleAnimItems('.hero .scroll-anim', 0.2);
-//   toggleAnimItems('.gallery .scroll-anim', 0.3);
-// });
-
-function watcherAnim(selector = '.scroll-anim', percent = 0.1, callback = (el) => {}, once = false) {
-  const animItems = document.querySelectorAll(selector);
-
-  const observer = new IntersectionObserver((entries, observerInstance) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        callback(entry.target);
-        if (once) {
-          observerInstance.unobserve(entry.target);
-        }
-      } else {
-        callback(entry.target);
-      }
-    });
-  }, {
-    root: null,
-    threshold: percent,
-  });
-
-  animItems.forEach(el => {
-    if (el instanceof Element) {
-      observer.observe(el);
-    }
-  });
-}
-
-watcherAnim(
-  '.hero .scroll-anim',
-  0.3,
-  (el) => el.classList.toggle('active'),
-);
-document.querySelector('[data-counter]') ? window.addEventListener('load', showCountsAnim) : null;
-  function showCountsAnim() {
-    function initCounts(countsItems) {
-      const counts = countsItems 
-        ? countsItems 
-        : document.querySelectorAll('[data-counter]');
-        
-      counts.forEach(item => countAnimate(item));
-    }
-
-    function countAnimate(count) {
-      let startTimestamp = null;
-
-      const duraction = parseInt(count.dataset.counter)
-        ? parseInt(count.dataset.counter)
-        : 1000;
-      const startValue = parseInt(count.innerHTML);
-      const startPosition = 0;
-
-      const step = (timestamp) => {
-        if(!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
-        count.innerHTML = Math.floor(progress * (startPosition + startValue));
-
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
-
-    const options = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetElem = entry.target;
-          const countersIntems = targetElem.querySelectorAll('[data-counter]');
-          if (countersIntems.length) {
-            initCounts(countersIntems);
-          }
-        //вимикає відслідковування після спрацювання
-        // observer.unobserve(targetElem);
-        }
-    });
-  }, options);
-
-  const countsSections = document.querySelectorAll('[data-digits]');
-  countsSections.forEach(section => observer.observe(section));
-
-}
+watcherToggle('.hero .scroll-anim', 0.3);
+watcherAnim('[data-counter]', 0.2, countAnimate, true);
+watcherToggle('.hero .scroll-anim', 0.3);
+watcherToggle('.section-header.scroll-anim', 0.9);
