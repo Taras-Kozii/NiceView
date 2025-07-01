@@ -1858,6 +1858,8 @@ html {
   border-radius: 8px;
   -webkit-box-shadow: 3.94px 3.94px 7.88px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 3.94px 3.94px 7.88px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
 }
 .masonry__item img {
   width: 100%;
