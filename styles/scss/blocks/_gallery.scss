@@ -99,7 +99,7 @@
       @include adaptive-property(width, 10, 20, 20);
       @include adaptive-property(height, 10, 20, 20);
       border-radius: 50%;
-      background-color: #C0AFA8;
+      background-color: #c0afa8;
       transition: $transition-duraction-short;
       @include onDesktop {
         display: none;

@@ -70,3 +70,15 @@
     margin-inline: auto;
   }
 }
+.get-info .scroll-anim {
+  opacity: 0;
+  transform: translateY(-70px);
+  transition:
+    transform $transition-duraction-short,
+    opacity $transition-duraction-long;
+  transition-delay: 0.15s;
+}
+.get-info .scroll-anim.active {
+  opacity: 1;
+  transform: translateY(0px);
+}

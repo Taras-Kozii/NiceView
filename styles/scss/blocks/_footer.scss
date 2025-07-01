@@ -1,6 +1,6 @@
 .footer {
-  background-color: #776D67;
-  color: #DDE5E8;
+  background-color: #776d67;
+  color: #dde5e8;
   &__content {
     @include adaptive-property(padding-block, 40, 40, 36);
     display: grid;
@@ -71,7 +71,7 @@
   &__item {
     @include adaptive-property(font-size, 0.875, 1.5, 1, rem);
     @include adaptive-property(line-height, 20, 36, 24);
-    color: #DDE5E8;
+    color: #dde5e8;
   }
   &__logo-text {
     @include nunito;
@@ -81,7 +81,7 @@
       letter-spacing: -0.008em;
     }
     text-align: center;
-    color: #5597C1;
+    color: #5597c1;
   }
 }
 .socials {
@@ -128,8 +128,9 @@
 }
 
 svg:hover .insta-1 {
-  animation: animate-svg-stroke-insta-1 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
-             animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  animation:
+    animate-svg-stroke-insta-1 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+    animate-svg-fill-insta-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
 }
 
 @keyframes animate-svg-stroke-insta-2 {
@@ -158,8 +159,9 @@ svg:hover .insta-1 {
   }
 }
 svg:hover .insta-2 {
-  animation: animate-svg-stroke-insta-2 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
-              animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+  animation:
+    animate-svg-stroke-insta-2 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+    animate-svg-fill-insta-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
 }
 @keyframes animate-svg-stroke-insta-3 {
   0% {
@@ -216,7 +218,7 @@ svg:hover .insta-4 {
 }
 
 svg::hover.insta-5 {
-  animation: animate-svg-stroke-insta-5 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both,
+  animation: animate-svg-stroke-insta-5 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s both;
 }
 
 // ====================================
@@ -249,8 +251,9 @@ svg::hover.insta-5 {
 }
 
 svg:hover .fb-1 {
-  animation: fb-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
-               fb-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  animation:
+    fb-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+    fb-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
 }
 
 @keyframes fb-stroke-2 {
@@ -283,8 +286,9 @@ svg:hover .fb-1 {
 }
 
 svg:hover .fb-2 {
-  animation: fb-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
-             fb-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+  animation:
+    fb-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+    fb-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
 }
 
 @keyframes fb-stroke-3 {
@@ -356,8 +360,9 @@ svg:hover .fb-4 {
 }
 
 svg:hover .youtube-1 {
-  animation: youtube-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
-               youtube-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  animation:
+    youtube-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+    youtube-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
 }
 
 @keyframes youtube-stroke-2 {
@@ -390,8 +395,9 @@ svg:hover .youtube-1 {
 }
 
 svg:hover .youtube-2 {
-  animation: youtube-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
-               youtube-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+  animation:
+    youtube-stroke-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both,
+    youtube-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
 }
 
 @keyframes youtube-stroke-3 {
@@ -460,8 +466,9 @@ svg:hover .youtube-4 {
 }
 
 svg:hover .teleg-1 {
-  animation: teleg-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
-             teleg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+  animation:
+    teleg-stroke-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both,
+    teleg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
 }
 
 @keyframes teleg-stroke-2 {

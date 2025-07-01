@@ -28,10 +28,9 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: #CEB181;
+      background-color: #ceb181;
       z-index: -1;
     }
-
   }
   &__title {
     @include adaptive-property(font-size, 1.25, 0, 1.5, rem);
@@ -70,7 +69,7 @@
       position: relative;
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: calc(50% - 2px);
         left: calc(50% - 6px);
@@ -86,7 +85,6 @@
         rotate: 45deg;
       }
     }
-
   }
 }
 .popup::backdrop {

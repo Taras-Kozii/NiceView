@@ -6,7 +6,7 @@
     @include onDesktop {
       row-gap: 0;
     }
-}
+  }
 }
 .item-advantage {
   display: flex;
@@ -49,7 +49,7 @@
       top: 0;
       display: block;
       height: 100%;
-      background: linear-gradient(-90.00deg, rgb(221, 229, 232) 22.225%,rgba(255, 255, 255, 0) 94.166%);
+      background: linear-gradient(-90deg, rgb(221, 229, 232) 22.225%, rgba(255, 255, 255, 0) 94.166%);
       @include adaptive-property(width, 40, 64, 64);
       @include onDesktop {
         display: none;
@@ -98,7 +98,7 @@
   &__right {
     @include onDesktop {
       grid-column: 7 / -1;
-      justify-self:auto;
+      justify-self: auto;
     }
   }
 }
