@@ -98,6 +98,7 @@
     margin-bottom: 40px;
   }
   &__bottom {
+    z-index: 2;
     margin-bottom: 40px;
     color: $text-color-main;
     @include onDesktop {

@@ -70,7 +70,7 @@
     margin-inline: auto;
   }
 }
-.get-info .scroll-anim {
+.get-info button.scroll-anim {
   opacity: 0;
   transform: translateY(-70px);
   transition:
@@ -78,7 +78,7 @@
     opacity $transition-duraction-long;
   transition-delay: 0.15s;
 }
-.get-info .scroll-anim.active {
+.get-info button.scroll-anim.active {
   opacity: 1;
   transform: translateY(0px);
 }

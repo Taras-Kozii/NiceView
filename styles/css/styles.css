@@ -1026,6 +1026,7 @@ html {
   margin-bottom: 40px;
 }
 .hero__bottom {
+  z-index: 2;
   margin-bottom: 40px;
   color: #324052;
 }
@@ -2338,7 +2339,7 @@ html {
   margin-inline: auto;
 }
 
-.get-info .scroll-anim {
+.get-info button.scroll-anim {
   opacity: 0;
   -webkit-transform: translateY(-70px);
       -ms-transform: translateY(-70px);
@@ -2351,7 +2352,7 @@ html {
           transition-delay: 0.15s;
 }
 
-.get-info .scroll-anim.active {
+.get-info button.scroll-anim.active {
   opacity: 1;
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
@@ -3354,13 +3355,14 @@ svg:hover .teleg-2 {
   line-height: 1.5;
   letter-spacing: -0.004em;
   color: #2e688d;
+  text-align: center;
 }
 @media (max-width: 1440px) {
   .popup__title {
     font-size: calc(1.25rem + (0.25) * (100vw - 20rem) / (70));
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 767px) {
   .popup__title {
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
@@ -3376,6 +3378,24 @@ svg:hover .teleg-2 {
   .popup__title--descktop {
     display: block;
     margin-bottom: 1rem;
+  }
+}
+.popup__title-mobile {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  text-align: center;
+  color: #2e688d;
+  margin-bottom: 0.625rem;
+}
+@media (min-width: 767px) {
+  .popup__title-mobile {
+    display: none;
   }
 }
 .popup__close {
@@ -3482,6 +3502,7 @@ svg:hover .teleg-2 {
   -webkit-column-gap: 100px;
      -moz-column-gap: 100px;
           column-gap: 100px;
+  row-gap: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
